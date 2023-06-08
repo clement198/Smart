@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    outline: 0;
+    text-decoration: none;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e6e6e6;
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+    z-index: -1;
+    background: radial-gradient(circle, transparent 25%, #FFf 26%), linear-gradient(45deg, transparent 46%, #FF7553 47%, #FF7553 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #FF7553 47%, #FF7553 52%, transparent 53%);
+    background-size: 2em 2em;
+    background-color: #FFf;
+    opacity: 1
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+header .logo img {
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    height: 90px;
+    width: 300px;
+}
+
+header .user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    margin-right: 50px;
+    border: 1px solid #000;
+    background: #333;
+    transition: all 0.5s ease;
+}
+
+header .user a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+header .user:hover {
+    background: #fff;
+}
+
+.user a:hover {
+    color: #333;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #fff;
+    width: 1000px;
+    height: max-content;
+    margin: 3% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(3, 3, 3, .7);
+}
+
+.menu .list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    background: #333;
+    width: 300px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu .list h3 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.menu .list i {
+    display: flex;
+    justify-content: center;
+    color: #FF7553;
+    font-size:1.3rem
+}
+
+
+/* Table */
+
+.user_table {
+    display: none;
+}
+
+.showUser {
+    display: block;
+}
+
+.project_table {
+    display: none;
+}
+
+.showProject {
+    display: block;
+}
+
+.table {
+    display: flex;
+    background: #fff;
+    width: max-content;
+    margin: 4% auto;
+}
+
+.table table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    box-shadow: 10px 10px 20px rgba(3, 3, 3, .7);
+}
+
+.table .tableHead {
+    border-collapse: collapse;
+    background-color: #4E5B66;
+    color: #fff;
+    border-right: 1px solid #000;
+}
+
+.table th,
+.table td {
+    font-size: 1.8rem;
+    padding: 10px;
+    width: fit-content;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.table .modifyBtn {
+    display: flex;
+}
+
+.table .modifyBtn a {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+    margin-right: 5px;
+    color: #333;
+}
+
+.table .modifyBtn .edit {
+    background: #ffcc00;
+}
+
+.table .modifyBtn .delete {
+    background: #F32013;
+}
+
+
+/* Table */
+
+
+/* User Edit */
+
+.blur {
+    background-color: rgba(78, 91, 102, .5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: max-content;
+    margin: 8% auto;
+    padding: 60px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+}
+
+.form h1 {
+    font-size: 4rem;
+}
+
+.form .subBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+.form .subBtn input[type="submit"] {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #4E5B66;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.form .subBtn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    background-color: #4E5B66;
+    color: #fff;
+    border: 1px solid #4E5B66;
+    transition: all 0.5s ease;
+}
+
+.form .subBtn input[type="submit"]:hover,
+.form .subBtn a:hover {
+    border: 1px solid #FF7553;
+    color: #4E5B66;
+    background-color: #fff;
+}
+
+.database_form input{
+    position: relative;
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #efefef;
+}
+
+.database_form label{
+    width: 160px;
+    display: inline-block;
+}
+
+.database_form input:focus {
+    outline: 1px solid #FF7553;
+}
+
+/* User Edit */
