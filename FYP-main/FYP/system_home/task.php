@@ -68,20 +68,22 @@ $result = mysqli_fetch_assoc($check);
 
         <div class="task_list">
             <div class="task_status" id="new">
-                <p>New Task</p>
+                <p id="status">New Task</p>
                 <p class="count">1</p>
             </div>
+
+            <div class="task">
+                <div class="task_name">
+                    <p>Lorem </p>
+                </div>
+            </div>
+
             <div class="task">
                 <div class="task_name">
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="input_task">
+            <div class="add_task" onclick="myTask()"> 
                 <a href="#">
                     Task
                     <i class='bx bx-list-plus'></i>
@@ -91,25 +93,37 @@ $result = mysqli_fetch_assoc($check);
 
         <div class="task_list">
             <div class="task_status" id="progress">
-                <p>In Progress</p>
+                <p id="status">In Progress</p>
                 <p class="count">1</p>
             </div>
             <div class="task">
                 <div class="task_name">
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
+            </div>
+            <div class="add_task">
+                <a href="#" onclick="myTask()">
+                    Task
+                    <i class='bx bx-list-plus'></i>
+                </a>
             </div>
         </div>
 
         <div class="task_list">
             <div class="task_status" id="hold">
-                <p>On Hold</p>
+                <p id="status">On Hold</p>
                 <p class="count">1</p>
             </div>
             <div class="task">
                 <div class="task_name">
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
+            </div>
+            <div class="add_task" onclick="myTask()">
+                <a href="#">
+                    Task
+                    <i class='bx bx-list-plus'></i>
+                </a>
             </div>
         </div>
 
@@ -123,6 +137,12 @@ $result = mysqli_fetch_assoc($check);
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
+            <div class="add_task" onclick="myTask()">
+                <a href="#">
+                    Task
+                    <i class='bx bx-list-plus'></i>
+                </a>
+            </div>
         </div>
 
         <div class="task_list">
@@ -134,6 +154,12 @@ $result = mysqli_fetch_assoc($check);
                 <div class="task_name">
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
+            </div>
+            <div class="add_task" onclick="myTask()">
+                <a href="#">
+                    Task
+                    <i class='bx bx-list-plus'></i>
+                </a>
             </div>
         </div>
 
@@ -147,8 +173,56 @@ $result = mysqli_fetch_assoc($check);
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
+            <div class="add_task" onclick="myTask()">
+                <a href="#">
+                    Task
+                    <i class='bx bx-list-plus'></i>
+                </a>
+            </div>
         </div>
 
+    </div>
+
+    <div class="task_creation">
+        <form action="#">
+            <div class="task_form">
+            <h3>Create Task</h3>
+                <div class="task_input">
+                    <label for="">Task Name : </label>
+                    <input type="text" placeholder="Task Name">
+                </div>
+
+                <div class="task_input">
+                    <label for="">Description : </label>
+                    <input type="text" placeholder="Description">
+                </div>
+
+                <div class="task_input">
+                    <label for="">Start Date : </label>
+                    <input type="date" >
+                </div>
+
+                <div class="task_input">
+                    <label for="">Due Date : </label>
+                    <input type="date">
+                </div>
+
+                <div class="task_input">
+                    <label for="">Status : </label>
+                    <input type="text" id="input_status" value="">
+                </div>
+
+                <div class="task_input" hidden>
+                    <label for="">Project ID : </label>
+                    <input type="text" value="<?=$project_id?>">
+                </div>
+
+                <div class="subBtn">
+                    <input type="submit" value="Create Task">
+                    <a href="#" onclick="myTask()">Cancel</a>
+                </div>
+            </div>
+        </form>
     </div>
 
 <script type="text/javascript" src="../home/index.js"></script>

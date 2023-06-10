@@ -585,6 +585,7 @@ input[type="password"] {
 
 .popup_form h1 {
     font-size: 4rem;
+    color: #FF7553;
 }
 
 .project_form label {
@@ -1063,6 +1064,7 @@ svg {
 .task_area .task_status {
     display: flex;
     height: 30px;
+    width: 155px;
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
@@ -1106,8 +1108,8 @@ svg {
     color: #333;
 }
 
-.task_area .task {
-    display: flex;
+.task {
+    display: none;
     border: 1px solid #000;
     border-radius: 5px;
     margin: 10px;
@@ -1115,26 +1117,126 @@ svg {
     cursor: grab;
 }
 
-.task_area .task p {
+.showList {
+    display: block;
+}
+
+.task_area .task_name p {
     margin: 5px 0 10px 10px;
     line-height: 20px;
     font-size: 1.5rem;
 }
 
-.task_area .input_task {
+.task_area .add_task {
     background-color: rgba(78, 91, 102, 0.3);
     height: 30px;
     border-radius: 5px;
     margin: 7px 10px 10px 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: all .2s ease-in;
 }
 
-.task_area .input_task a {
+.task_area .add_task:hover {
+    background: #333;
+}
+
+.task_area .add_task a:hover {
+    color: #fff;
+}
+
+.task_area .add_task a {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000;
     font-size: 1.5rem;
+}
+
+.task_creation {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+}
+
+.showTaskForm {
+    display: block;
+}
+
+.task_creation .task_form {
+    background: #fff;
+    width: 500px;
+    height: max-content;
+    padding: 60px;
+    margin: 8% auto;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+}
+
+.task_form .task_input label {
+    width: 170px;
+    display: inline-block;
+}
+
+.task_form .task_input input {
+    border: none;
+    background: #efefef;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1.3rem;
+}
+
+.task_creation .task_form h3 {
+    color: #FF7553;
+    font-size: 4rem;
+}
+
+.task_creation .subBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.task_creation .subBtn input[type="submit"] {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #4E5B66;
+    color: #fff;
+    transition: all .2s ease-in;
+}
+
+.task_creation .subBtn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    background-color: #4E5B66;
+    color: #fff;
+    border: 1px solid #4E5B66;
+    transition: all .2s ease-in;
+}
+
+.task_creation .subBtn input[type="submit"]:hover,
+.task_creation .subBtn a:hover {
+    border: 1px solid #FF7553;
+    color: #4E5B66;
+    background-color: #fff;
 }
 
 
@@ -1661,8 +1763,23 @@ body::-webkit-scrollbar-thumb {
     .task_area .task p {
         font-size: .8rem;
     }
-    .task_area .input_task a {
+    .task_area .add_task a {
         font-size: 1rem;
+    }
+    .task_creation .task_form {
+        margin: 4% auto;
+    }
+    .task_form .task_input input {
+        font-size: .8rem;
+    }
+    .task_creation .task_form h3 {
+        font-size: 2rem;
+    }
+    .task_creation .subBtn input[type="submit"] {
+        font-size: .8rem;
+    }
+    .task_creation .subBtn a {
+        font-size: 1.3rem;
     }
     /* Task */
 }

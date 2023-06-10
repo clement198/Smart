@@ -105,7 +105,7 @@ header .user:hover {
     display: flex;
     justify-content: center;
     color: #FF7553;
-    font-size:1.3rem
+    font-size: 1.3rem
 }
 
 
@@ -215,6 +215,7 @@ header .user:hover {
     justify-content: center;
     gap: 10%;
 }
+
 .form .subBtn input[type="submit"] {
     cursor: pointer;
     text-align: center;
@@ -254,7 +255,7 @@ header .user:hover {
     background-color: #fff;
 }
 
-.database_form input{
+.database_form input {
     position: relative;
     font-size: 1rem;
     padding-left: 10px;
@@ -266,7 +267,7 @@ header .user:hover {
     background-color: #efefef;
 }
 
-.database_form label{
+.database_form label {
     width: 160px;
     display: inline-block;
 }
@@ -275,4 +276,39 @@ header .user:hover {
     outline: 1px solid #FF7553;
 }
 
+
 /* User Edit */
+
+
+/* Responsive */
+
+@media all and (max-width: 1540px) {
+    header .user a {
+        font-size: 1rem;
+    }
+    .menu .list h3 {
+        font-size: 1rem;
+    }
+    .menu .list i {
+        font-size: .8rem;
+    }
+    .table th,
+    .table td {
+        font-size: 1rem;
+    }
+    .form h1 {
+        font-size: 2.5rem;
+    }
+    .form .subBtn input[type="submit"] {
+        font-size: .8rem;
+    }
+    .form .subBtn a {
+        font-size: 1.3rem;
+    }
+    .database_form input {
+        font-size: .7rem;
+    }
+}
+
+
+/* Responsive */

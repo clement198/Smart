@@ -34,6 +34,20 @@ const imgChange = () => {
 // profile img 
 
 
+// Task
+let task = document.querySelector('.task_creation');
+let status = document.querySelectorAll("#status");
+let input = document.getElementById('input_status');
+
+const myTask = (event) => {
+
+    task.classList.toggle('showTaskForm');
+    input.value = event.target.innerHTML;
+
+}
+
+// Task
+
 // Refresh 
 
 const form = document.querySelector(".message"),
