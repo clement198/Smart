@@ -36,15 +36,27 @@ const imgChange = () => {
 
 // Task
 let task = document.querySelector('.task_creation');
-let status = document.querySelectorAll("#status");
+let status = document.querySelector(".status");
 let input = document.getElementById('input_status');
 
-const myTask = (event) => {
-
+const myTask = () => {
     task.classList.toggle('showTaskForm');
-    input.value = event.target.innerHTML;
-
 }
+
+// Get upload File Task
+
+let uploadTask = document.querySelector('#file');
+let displayFile = document.querySelector('#display');
+
+const myChange = () => {
+    let file_name = uploadTask.files[0].name;
+    displayFile.innerText = file_name;
+    
+}
+
+
+// Get upload File Task
+
 
 // Task
 

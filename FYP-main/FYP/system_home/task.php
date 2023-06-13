@@ -62,69 +62,92 @@ $result = mysqli_fetch_assoc($check);
     <div class="task_section">
         <div class="project_detail">
             <h3><?=$result['project_name']?></h3>
+            <div class="add_task" onclick="myTask()">
+            <a href="#">
+                <i class='bx bx-list-plus'></i>
+            </a>
+        </div>
         </div>
 
         <div class="task_area">
 
         <div class="task_list">
             <div class="task_status" id="new">
-                <p id="status">New Task</p>
+                <p>New Task</p>
                 <p class="count">1</p>
             </div>
-
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem </p>
-                </div>
-            </div>
-
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task" onclick="myTask()"> 
-                <a href="#">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'New Task'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task')'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
+            
         </div>
 
         <div class="task_list">
             <div class="task_status" id="progress">
-                <p id="status">In Progress</p>
+                <p>In Progress</p>
                 <p class="count">1</p>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task">
-                <a href="#" onclick="myTask()">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Progress'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
         </div>
 
         <div class="task_list">
             <div class="task_status" id="hold">
-                <p id="status">On Hold</p>
+                <p>On Hold</p>
                 <p class="count">1</p>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task" onclick="myTask()">
-                <a href="#">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'On Hold'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
         </div>
 
         <div class="task_list">
@@ -132,17 +155,25 @@ $result = mysqli_fetch_assoc($check);
                 <p>Cancelled</p>
                 <p class="count">1</p>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task" onclick="myTask()">
-                <a href="#">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Cancelled'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
         </div>
 
         <div class="task_list">
@@ -150,17 +181,25 @@ $result = mysqli_fetch_assoc($check);
                 <p>In Review</p>
                 <p class="count">1</p>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task" onclick="myTask()">
-                <a href="#">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Review'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
         </div>
 
         <div class="task_list">
@@ -168,54 +207,69 @@ $result = mysqli_fetch_assoc($check);
                 <p>Completed</p>
                 <p class="count">1</p>
             </div>
-            <div class="task">
-                <div class="task_name">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="add_task" onclick="myTask()">
-                <a href="#">
-                    Task
-                    <i class='bx bx-list-plus'></i>
-                </a>
-            </div>
+            <?php
+            $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Completed'";
+            $check_task = mysqli_query($dbconnection , $task_sql);
+            if(mysqli_num_rows($check_task) > 0){
+                while($task_data = mysqli_fetch_assoc($check_task)){
+                    echo "
+                    <a href='task_details.php?taskid=".$task_data['taskID']."'>
+                    <div class='task'>
+                    <div class='task_name'>
+                        <p>
+                        ".$task_data['task_name']."
+                        </p>
+                    </div>
+                    </div>
+                    </a>
+                    ";
+                }
+            }
+            ?>
         </div>
-
-    </div>
+        
+    </div>       
 
     <div class="task_creation">
-        <form action="#">
+        <form action="../backend/task_back.php?projectid=<?=$project_id?>" method="POST">
             <div class="task_form">
             <h3>Create Task</h3>
                 <div class="task_input">
                     <label for="">Task Name : </label>
-                    <input type="text" placeholder="Task Name">
+                    <input type="text" name="taskName" placeholder="Task Name" required>
                 </div>
 
                 <div class="task_input">
                     <label for="">Description : </label>
-                    <input type="text" placeholder="Description">
+                    <input type="text" name="description" placeholder="Description" autocomplete="off" required >
                 </div>
 
                 <div class="task_input">
                     <label for="">Start Date : </label>
-                    <input type="date" >
+                    <input type="date" id="sdate" name="sdate"required>
                 </div>
 
                 <div class="task_input">
                     <label for="">Due Date : </label>
-                    <input type="date">
+                    <input type="date" id="ddate" name="ddate"required>
                 </div>
 
                 <div class="task_input">
                     <label for="">Status : </label>
-                    <input type="text" id="input_status" value="">
+                    <select name="status">
+                        <option value="New Task">New Task</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="On Hold">On Hold</option>
+                        <option value="Cancelled">Cancelled</option>
+                        <option value="In Review">In Review</option>
+                        <option value="Completed">Completed</option>
+                    </select>
                 </div>
 
-                <div class="task_input" hidden>
+                <!-- <div class="task_input" hidden>
                     <label for="">Project ID : </label>
-                    <input type="text" value="<?=$project_id?>">
-                </div>
+                    <input type="text" name="project_id" value="<?=$project_id?>">
+                </div> -->
 
                 <div class="subBtn">
                     <input type="submit" value="Create Task">
