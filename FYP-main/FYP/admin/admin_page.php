@@ -1,18 +1,4 @@
-<?php
-session_start();
-include_once '../backend/dbconnection.php';
 
-$id = $_SESSION['admin'];
-
-$sql = "SELECT * FROM user_db WHERE userID = $id";
-$check_result = mysqli_query($dbconnection ,$sql);
-$data = mysqli_fetch_assoc($check_result);
-
-if(!isset($id)){
-    header('Location:../login/login.php');
-}
-
-?>
 
 
 <!DOCTYPE html>
@@ -95,7 +81,7 @@ if(!isset($id)){
                         echo "<td>".$result['role']."</td>";
                         echo "<td class='modifyBtn'>";
                         echo "<a href='user_edit_delete/edit_page.php?editID=".$result['userID']."' class='edit'>Edit</a>";
-                        echo "<a href='user_edit_delete/delete.php?deleteID=".$result['userID']."' class='delete'>Delete</a>";
+                        echo "<a href='user_edit_delete/delete_confirmation.php?deleteID=".$result['userID']."' class='delete'>Delete</a>";
                         echo "</td>";
                         
                         echo "</tr>";
@@ -103,9 +89,6 @@ if(!isset($id)){
                 }
                 
                 ?>
-                <div class="confirmation">
-                    
-                </div>
                 
             </table>
         </div>
@@ -141,7 +124,7 @@ if(!isset($id)){
                         echo "<td>".$result['due_date']."</td>";
                         echo "<td class='modifyBtn'>";
                         echo "<a href='project_edit_delete/edit_page.php?editID=".$result['projectID']."' class='edit'>Edit</a>";
-                        echo "<a href='project_edit_delete/delete.php?deleteID=".$result['projectID']."' class='delete'>Delete</a>";
+                        echo "<a href='project_edit_delete/delete_confirmation.php?deleteID=".$result['projectID']."' class='delete'>Delete</a>";
                         echo "</td>";
                         
                         echo "</tr>";
@@ -150,10 +133,29 @@ if(!isset($id)){
                 
                 ?>
                 
-                
             </table>
         </div>
     </section>
+    <?php
+    
+    if(isset($_SESSION['message'])){
+        echo "
+        <figure class='notification'>
+            <div class='notification_body'>
+                <i class='bx bx-check-circle'></i>
+                <p>".$_SESSION['message']."</p>
+                <i class='bx bx-party'></i>
+            </div>
+            <div class='progress_bar'></div>
+        </figure>
+        ";
+        unset($_SESSION['message']);
+    }
+    
+    ?>
+    
+    
+    
     
 <script type="text/javascript" src="index.js"></script>
 </body>

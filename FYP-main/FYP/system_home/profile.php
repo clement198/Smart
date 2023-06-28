@@ -32,7 +32,7 @@ if(empty($id)){
 </head>
 <body>
     <header class="top-bar">
-        <div class="user">
+        <div class="user_bar">
         <a href="profile.php"><img src="../system_home/user_image/<?=$data['user_img']?>" alt=""></a>
         <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
         </div>
@@ -47,10 +47,9 @@ if(empty($id)){
             </a>
         </div>
         <ul class="menu-list">
-        <li><a href="system_home_page.php"><i class='bx bxs-home'></i>Home</a></li>
-            <li><a href="system_dash.php"><i class='bx bxs-dashboard' ></i>Dashboard</a></li>
+        <li><a href="system_home_page.php"><i class='bx bxs-home'></i>Project Management</a></li>
             <li><a href="system_chat.php"><i class='bx bxs-chat' ></i>Chat</a></li>
-            <li><a href="#"><i class='bx bxs-group' ></i>Team Member</a></li>
+
         </ul>
     </div>
 

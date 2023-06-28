@@ -20,18 +20,29 @@ function daysCalc ($convert_sDate , $convert_dDate){
     return $days;
 }
 
+$latestDate = date('Y-m-d');
+$convert_lDate = strtotime($latestDate);
+
+function daysRemaining ($convert_lDate , $convert_dDate){
+    $calcRemain = $convert_dDate - $convert_lDate;
+    $remaining = floor($calcRemain / (60 * 60 * 24));
+    return $remaining;
+}
+
+$remainResult = daysRemaining($convert_lDate , $convert_dDate);
 
 $daysResult = daysCalc($convert_sDate , $convert_dDate);
 
 if(!empty($task_name) && !empty($description) 
 &&!empty($start_date) && !empty($due_date) && !empty($status)){
-    $sql = "INSERT INTO task_db (task_name , description, start_date, due_date , days , status , project_id) 
+    $sql = "INSERT INTO task_db (task_name , description, start_date, due_date , days , remaining , status , project_id) 
     VALUES (
         '{$task_name}' ,
         '{$description}' ,
         '{$start_date}' ,   
         '{$due_date}' ,   
         '{$daysResult}' ,   
+        '{$remainResult}' ,   
         '{$status}' ,   
         {$project_id}
     )";

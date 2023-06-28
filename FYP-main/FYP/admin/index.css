@@ -276,8 +276,103 @@ header .user:hover {
     outline: 1px solid #FF7553;
 }
 
+.confirmation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+}
+
+.showProject_confirmation {
+    display: block;
+}
+
+.confirmation .delete {
+    text-align: center;
+    background: #fff;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10% auto;
+}
+
+.delete a {
+    color: #333;
+    padding: 5px;
+}
+
+.delete a:hover {
+    color: #FF7553;
+}
+
 
 /* User Edit */
+
+
+/* show Notification */
+
+.notification {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: max-content;
+    border-radius: 6px;
+    background: #313e2c;
+    color: #aaec8a;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 3s linear;
+}
+
+.notification i {
+    font-size: 26px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.notification_body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 8px;
+}
+
+.progress_bar {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: calc(100% - 8px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(to right, #313e2c, #aaec8a);
+    border-radius: inherit;
+    animation: progress 2.5s 0.3s linear;
+}
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+
+/* show Notification */
 
 
 /* Responsive */

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../home/index.css">
+    <link rel="stylesheet" href="../system_home/notification.css">
     <!-- Google Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +18,26 @@
     <!-- Icon package -->
     <title>Login</title>
 </head>
+
 <body>
+
+    <?php
+    session_start();
+    if (isset($_SESSION['message'])) {
+        echo "
+        <figure class='notification'>
+            <div class='notification_body'>
+            <i class='bx bx-alarm-exclamation'></i>
+                <p>" . $_SESSION['message'] . "</p>
+                <i class='bx bx-shield-x' ></i>
+            </div>
+            <div class='progress_bar'></div>
+        </figure>
+        ";
+        unset($_SESSION['message']);
+    }
+
+    ?>
     <div class="login-box">
         <div class="brand">
             <img src="../home/logo3.png" alt="">
@@ -44,9 +65,12 @@
                 <a href="../register/register.php">Do not have account yet ?</a>
 
             </form>
-            
+
         </div>
     </div>
+
+
     <script type="text/javascript" src="../home/index.js"></script>
 </body>
+
 </html>

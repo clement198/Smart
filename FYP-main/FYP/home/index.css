@@ -136,6 +136,23 @@ header {
     background-color: #fff;
     box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
     border-radius: 20px;
+    transition: all .9s ease;
+}
+
+#loader {
+    display: block;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.loading {
+    display: block;
+    margin: 8% auto;
 }
 
 .login-box .brand img {
@@ -240,11 +257,12 @@ input[type="password"] {
 }
 
 .input-box .input input[type="text"],
-input[type="password"] {
+.input-box .input input[type="password"],
+.input-box .input select {
     display: block;
     width: 98%;
     height: 55px;
-    font-size: 1rem;
+    font-size: .8rem;
     padding-left: 10px;
     border: none;
     border-radius: 5px;
@@ -295,19 +313,24 @@ input[type="password"] {
     position: fixed;
     padding: 10px;
     margin-right: 400px;
-    background-color: #fff;
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100%;
     width: 260px;
-    border-right: 1px solid #ccc;
 }
 
 .side-bar .brand img {
     position: absolute;
+    background: #eee;
     top: 0;
     left: -15%;
     object-fit: cover;
-    height: 80px;
-    width: 100%;
+    height: 60px;
+    width: 321px;
 }
 
 .side-bar .menu-list {
@@ -317,18 +340,19 @@ input[type="password"] {
 
 .side-bar .menu-list a {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    color: #4E5B66;
+    color: #fff;
     font-size: 1.6rem;
     padding: 6px 50px 6px 20px;
     border-radius: 10px;
-    width: 150px;
+    width: 200px;
     transition: all .3s ease-in;
 }
 
 .side-bar .menu-list a.active {
     background-color: #4E5B66;
-    color: #fff;
+    color: #FF7553;
     width: 180px;
 }
 
@@ -347,15 +371,15 @@ input[type="password"] {
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: #eee;
     border-bottom: 2px solid #ccc;
 }
 
-.top-bar .user {
+.top-bar .user_bar {
     padding-top: 8px;
 }
 
-.top-bar .user img {
+.top-bar .user_bar img {
     position: absolute;
     aspect-ratio: 5/3;
     object-fit: cover;
@@ -367,18 +391,18 @@ input[type="password"] {
     transition: all .2s ease-in;
 }
 
-.top-bar .user img:hover {
+.top-bar .user_bar img:hover {
     border: 2px solid #FF7553;
 }
 
-.top-bar .user .logout {
+.top-bar .user_bar .logout {
     color: #fff;
     transition: all .2s ease-in;
     display: flex;
     align-items: center;
 }
 
-.top-bar .user li {
+.top-bar .user_bar li {
     position: absolute;
     right: 3%;
     color: #FF7553;
@@ -390,17 +414,17 @@ input[type="password"] {
     transition: all .2s ease-in;
 }
 
-.top-bar .user i {
+.top-bar .user_bar i {
     color: #FF7553;
     padding-left: 5px;
 }
 
-.top-bar .user li:hover {
+.top-bar .user_bar li:hover {
     border: 1px solid #FF7553;
     background-color: #fff;
 }
 
-.top-bar .user a:hover {
+.top-bar .user_bar a:hover {
     color: #4E5B66;
 }
 
@@ -754,52 +778,10 @@ input[type="password"] {
     transition: all 0.3s ease-in;
 }
 
-.project_item .progress_bar {
-    margin-right: 50px;
-    width: 100px;
-    height: 100px;
-}
-
-.project_item .progress_bar .outer {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-}
-
-.project_item .progress_bar .inner {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project_item .progress_bar .inner .number {
-    font-weight: 700;
-    color: #000;
-}
-
 .project_box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 1rem;
-}
-
-circle {
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 320;
-    stroke-dashoffset: 320;
-    animation: anim 2s linear forwards;
-}
-
-svg {
-    position: absolute;
 }
 
 .project_item .project_details h3 {
@@ -817,19 +799,10 @@ svg {
     color: #000;
 }
 
-.project_item .team_member {
-    width: fit-content;
-    height: fit-content;
-    display: inline;
-    margin-left: 5px;
-}
-
-.project_item .team_member img {
-    border: 1px solid #000;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
+.project_item i {
+    font-size: 1.5rem;
+    color: #333;
+    margin-right: 5px;
 }
 
 .project_item .modify {
@@ -870,17 +843,67 @@ svg {
     height: 200px;
 }
 
+.user_list_display {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.user_list_display .user {
+    display: flex;
+    background: #fff;
+    width: max-content;
+    margin: 8% auto;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-collapse: collapse;
+    box-shadow: 10px 10px 20px rgba(3, 3, 3, .7);
+}
+
+table th {
+    border-collapse: collapse;
+    background-color: #4E5B66;
+    color: #fff;
+}
+
+table th,
+table td {
+    font-size: 1rem;
+    padding: 10px;
+    width: fit-content;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table td a {
+    background: #339900;
+    color: #fff;
+    padding: 0 10px 0 10px;
+}
+
 .list {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #000;
+    padding: 20px;
     cursor: pointer;
-    background-color: #f2f2f2;
+    background-color: #fff;
+    width: fit-content;
+    border-radius: 10px;
+    border: 1px solid #333;
 }
 
 .list:hover {
-    background-color: #fff;
+    background-color: #eee;
+    border: 1px solid #FF7553;
 }
 
 .list img {
@@ -895,13 +918,13 @@ svg {
     height: 30px;
 }
 
-.list .details h2 {
-    font-size: 2rem;
+.list .details p {
+    font-size: 1rem;
     color: #333;
 }
 
 .list .details h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #333;
 }
 
@@ -931,19 +954,15 @@ svg {
 }
 
 .confirmation .content a {
-    background-color: #4E5B66;
-    color: #fff;
+    color: #333;
     padding: 5px 10px 5px 10px;
     width: fit-content;
     height: fit-content;
-    border: 1px solid #4E5B66;
     transition: all 0.2s ease-in;
 }
 
 .confirmation .content a:hover {
-    background-color: #fff;
-    color: #4E5B66;
-    border: 1px solid #FF7553;
+    color: #FF7553;
 }
 
 
@@ -1062,10 +1081,15 @@ svg {
 
 .task_area .task_status {
     display: flex;
+    justify-content: space-between;
     height: 30px;
     width: 200px;
     border-radius: 10px;
     margin-left: 10px;
+    margin-right: 10px;
+}
+
+.task_area .task_status p {
     margin-right: 10px;
 }
 
@@ -1126,7 +1150,7 @@ svg {
 
 .add_task {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background-color: #fff;
     border-radius: 50%;
@@ -1171,13 +1195,13 @@ svg {
     box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
 }
 
-.task_form .task_input label {
+.task_input label {
     width: 170px;
     display: inline-block;
 }
 
-.task_form .task_input input,
-.task_form .task_input select {
+.task_input input,
+.task_input select {
     border: none;
     background: #efefef;
     padding: 5px 10px 5px 10px;
@@ -1246,6 +1270,7 @@ svg {
 }
 
 .task_detail_header .task_details {
+    position: relative;
     width: 1200px;
     height: 700px;
     margin: 5% auto;
@@ -1253,7 +1278,7 @@ svg {
     border-radius: 10px;
 }
 
-.task_details .task_title{
+.task_details .task_title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1267,6 +1292,296 @@ svg {
     color: #FF7553;
 }
 
+.function {
+    display: flex;
+}
+
+.function a {
+    display: flex;
+    background: #eee;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+    transition: all .2s ease-in;
+    border: 1px solid #eee;
+}
+
+.function a:hover {
+    background: #fff;
+    border: 1px solid #FF7553;
+}
+
+.function i {
+    font-size: .8rem;
+    color: #333;
+}
+
+.inv_user {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.openInv {
+    display: block;
+}
+
+.inv_user .search_user {
+    background: #fff;
+    width: fit-content;
+    padding: 60px;
+    margin: 8% auto;
+    border-radius: 10px;
+}
+
+.search_user input[type="text"] {
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+    font-size: .6rem;
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.search_user input[type="text"]:focus {
+    border: 1px solid #FF7553;
+}
+
+.search_user .invBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search_user .invBtn input {
+    background: #4E5B66;
+    color: #fff;
+    font-size: .6rem;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #4E5B66;
+    transition: all .2s ease-in;
+}
+
+.search_user .invBtn a {
+    background: #4E5B66;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #4E5B66;
+    transition: all .2s ease-in;
+}
+
+.search_user .invBtn input:hover,
+.search_user .invBtn a:hover {
+    color: #FF7553;
+    background: #fff;
+    border: 1px solid #FF7553;
+}
+
+.collab_user_detail {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.show_remove {
+    display: block;
+}
+
+.collab_user_detail .user_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.collab_user_detail .user_details img {
+    width: 20%;
+}
+
+.collab_user_detail .user_details p {
+    margin-left: 10px;
+}
+
+.collab_user_detail .user_details:hover {
+    background: #eee;
+}
+
+.user_details .remove {
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+}
+
+.user_details .remove i {
+    color: #333;
+    font-size: 1rem;
+}
+
+.user_details .remove i:hover {
+    color: #FF7553;
+}
+
+.insert_file {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.show_insert {
+    display: block;
+}
+
+.insert_file .file {
+    background: #fff;
+    width: fit-content;
+    padding: 60px;
+    margin: 8% auto;
+    border-radius: 10px;
+}
+
+.insert_file .file p {
+    text-align: center;
+}
+
+.file .add_file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+    width: 200px;
+    padding: 2px 10px 2px 10px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.file .add_file i {
+    font-size: 1rem;
+    color: #FF7553;
+}
+
+.file .add_file label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #FF7553;
+    gap: 5px;
+}
+
+.task_detail_edit {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.display_edit {
+    display: block;
+}
+
+.task_detail_edit .detail_form {
+    background: #fff;
+    width: fit-content;
+    padding: 60px;
+    margin: 8% auto;
+    border-radius: 10px;
+}
+
+.subBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.subBtn input[type="submit"] {
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: .8rem;
+    background-color: #4E5B66;
+    color: #fff;
+    transition: all .2s ease-in;
+}
+
+.subBtn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    width: 45%;
+    height: 55px;
+    border-radius: 5px;
+    font-size: 1.9rem;
+    background-color: #4E5B66;
+    color: #fff;
+    border: 1px solid #4E5B66;
+    transition: all .2s ease-in;
+}
+
+.subBtn input[type="submit"]:hover,
+.subBtn a:hover {
+    border: 1px solid #FF7553;
+    color: #4E5B66;
+    background-color: #fff;
+}
+
+.delete_alert {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.display_delete {
+    display: block;
+}
+
+.alert {
+    text-align: center;
+    background: #fff;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10% auto;
+}
+
+.alert a {
+    color: #333;
+    padding: 5px;
+}
+
+.alert a:hover {
+    color: #FF7553;
+}
 
 .task_bar {
     display: flex;
@@ -1276,27 +1591,28 @@ svg {
     padding: 10px;
 }
 
-.task_bar .status select {
-    display: block;
-    border: none;
-    background: #eee;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.task_bar .status , 
-.task_bar .sdate ,
-.task_bar .ddate ,
-.task_bar .days {
+.task_bar .info {
     width: 200px;
     border-radius: 10px;
     background: #eee;
     padding: 10px;
-    line-height: 1.5rem;
+    line-height: 1rem;
     margin-right: 10px;
 }
 
-.task_bar p{
+.task_bar .info .task_user {
+    padding-top: 2px;
+    display: block;
+}
+
+.task_bar .info img {
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 10%;
+}
+
+.task_bar p {
     font-size: 1.8rem;
 }
 
@@ -1313,38 +1629,110 @@ svg {
     padding: 10px;
 }
 
-.ext_function .desc{
+.ext_function .desc {
     word-break: break-word;
     line-height: 1.5rem;
 }
 
-.ext_function .desc label , 
-.desc p{
+.ext_function .desc label,
+.desc p {
     font-size: 1.5rem;
     margin-left: 10px;
 }
 
-.ext_function .add_file {
+.comment_section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background: #eee;
-    padding: 2px 10px 2px 10px;
-    margin-right: 20px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.comment_section .input_comment {
+    display: flex;
+    gap: 10px;
+}
+
+.input_comment input {
+    margin-left: 10px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    font-size: .8rem;
+    border: none;
     border-radius: 10px;
 }
 
-.ext_function .add_file i {
+.input_comment input:focus {
+    border: 1px solid #FF7553;
+}
+
+.input_comment button {
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.input_comment i {
+    color: #333;
+    font-size: 1rem;
+}
+
+.input_comment button:hover {
+    border: 1px solid #FF7553;
+}
+
+.display_comment {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.display_comment img {
+    border: 2px solid #4E5B66;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.display_comment .message_detail {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #eee;
+    color: #333;
+    padding: 8px 16px;
+    margin-right: 10px;
+    word-wrap: break-word;
+}
+
+.display_comment .message_detail h6 {
     font-size: 1.2rem;
+    color: #333;
+}
+
+.display_comment .message_detail span {
     color: #FF7553;
 }
 
-.ext_function .add_file label {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: #FF7553;
-    gap: 5px;
+.display_comment .message_detail p {
+    font-size: 1rem;
 }
+
+.display_comment .message_detail i {
+    font-size: .8rem;
+    border: 1px solid #333;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.comment_area {
+    height: 50%;
+    overflow-y: auto;
+}
+
 
 /* Task */
 
@@ -1352,6 +1740,7 @@ svg {
 /* Chat */
 
 .user_chat {
+    position: relative;
     display: flex;
     background-color: #fff;
     border-radius: 10px;
@@ -1450,6 +1839,10 @@ svg {
     outline: 1px solid #FF7553;
 }
 
+.user_chat .search button {
+    border: none;
+}
+
 .user_chat .search i {
     display: flex;
     justify-content: center;
@@ -1472,9 +1865,14 @@ svg {
 }
 
 .chat_area {
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: #eee;
+}
+
+.msg_box {
+    height: 75%;
     overflow-y: auto;
 }
 
@@ -1597,6 +1995,9 @@ svg {
 }
 
 .chat_area .message {
+    position: absolute;
+    bottom: 0;
+    width: 91%;
     display: flex;
     padding: 18px 30px;
     justify-content: space-between;
@@ -1662,6 +2063,303 @@ svg {
 /* Chat */
 
 
+/* Calender */
+
+.calender {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1100px;
+    height: 640px;
+    margin: 6% 4% 8% auto;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    z-index: -1;
+}
+
+.calender .month_year {
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.calender .month_year h1,
+.calender .month_year h2 {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.calender .month_year i {
+    cursor: pointer;
+    color: #FF7553;
+    font-size: 1.2rem;
+}
+
+.calender .month_year .features {
+    position: absolute;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.calender .weekdays {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    color: #fd746c;
+}
+
+.calender .days {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.calender .days .day {
+    width: 14.10%;
+    height: 80px;
+    display: flex;
+    justify-content: start;
+    cursor: pointer;
+    color: #333;
+    border: 1px solid #cccccc9b;
+}
+
+.calender .days .day p {
+    padding-left: 5px;
+}
+
+.calender .currentDate {
+    background: #eee;
+}
+
+.calender .currentDate p {
+    font-size: 1.5rem;
+    color: #FF7553;
+    text-shadow: 2px 2px 1px #ccc;
+}
+
+.calender .balanceDate p {
+    color: #ccc;
+}
+
+
+/* .calender .event {
+    content: "";
+    background: #fd746c;
+    background: -webkit-linear-gradient(to right, #ff9068, #fd746c);
+    background: linear-gradient(to right, #ff9068, #fd746c);
+    width: 10px;
+    height: 10px;
+}
+
+.calender .event p {
+    color: #eee;
+} */
+
+.calender-event {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, .5);
+    z-index: 1;
+}
+
+.openCalender {
+    display: block;
+}
+
+.calender-event .event-detail {
+    background: #fff;
+    width: fit-content;
+    height: fit-content;
+    padding: 60px;
+    border-radius: 10px;
+    margin: 8% auto;
+}
+
+.event-detail .input-detail {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.event-detail .input-detail label {
+    width: 150px;
+}
+
+.event-detail .input-detail input {
+    background: #eee;
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.event-detail i {
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.event-detail h1 {
+    margin-top: 20px;
+    color: #fd746c;
+}
+
+.event_display {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #ee9ca7;
+    z-index: 1;
+    border-radius: 10px 0 0 10px;
+    transition: width .3s;
+    transition-timing-function: linear;
+}
+
+.event-show {
+    width: 300px;
+}
+
+.event_display .event_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    border-bottom: 1px solid #333;
+}
+
+.event_heading h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.event_heading i {
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.event_details {
+    display: block;
+    position: relative;
+    padding: 10px;
+}
+
+.event_card {
+    display: block;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.event_card .menu-dot {
+    float: right;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #bebaba;
+}
+
+.drop-down {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    background: #333;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.drop {
+    display: block;
+}
+
+.drop-down i {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: .6rem;
+    padding-bottom: 5px;
+    animation: dropDown 300ms ease-in-out forwards
+}
+
+@keyframes dropDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+.drop-down i:hover {
+    color: #9BB8ED;
+}
+
+.event_card h3 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #9BB8ED;
+    color: #333;
+    border-radius: 50px;
+    width: 150px;
+    height: 30px;
+    padding: 3px 10px 3px 10px;
+    font-size: 1.2rem;
+}
+
+.date_time {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.date_time p {
+    font-size: .8rem;
+    color: #afa8a8;
+}
+
+
+/* Calender */
+
+
+/* Dashboard */
+
+.dashboard-container {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 1100px;
+    height: 600px;
+    margin: 6% 5% 7% auto;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+}
+
+
+/* Dashboard */
+
+
 /* Scroll bar */
 
 ::-webkit-scrollbar {
@@ -1714,11 +2412,11 @@ body::-webkit-scrollbar-thumb {
     }
     /* Login */
     /* System home */
-    .top-bar .user img {
+    .top-bar .user_bar img {
         width: 35px;
         height: 35px;
     }
-    .top-bar .user li {
+    .top-bar .user_bar li {
         font-size: 1rem;
     }
     .top-bar .location {
@@ -1752,15 +2450,12 @@ body::-webkit-scrollbar-thumb {
     .project_box {
         grid-template-columns: repeat(2, .5fr);
     }
-    .project_item .progress_bar .inner .number {
-        font-size: .8rem;
-    }
     .project_item .project_details h3 {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     .project_item .project_details h5,
     .project_item .project_details p {
-        font-size: .8rem;
+        font-size: 1rem;
     }
     .project_form input[type="text"],
     .project_form input[type="date"],
@@ -1875,7 +2570,7 @@ body::-webkit-scrollbar-thumb {
     .task_creation .task_form {
         margin: 4% auto;
     }
-    .task_form .task_input input {
+    .task_input input {
         font-size: .8rem;
     }
     .task_creation .task_form h3 {
@@ -1886,6 +2581,67 @@ body::-webkit-scrollbar-thumb {
     }
     .task_creation .subBtn a {
         font-size: 1.3rem;
+    }
+    .detail_form .subBtn input[type="submit"] {
+        font-size: .8rem;
+    }
+    .detail_form .subBtn a {
+        font-size: 1.3rem;
+    }
+    .file .subBtn input[type="submit"] {
+        font-size: .7rem;
+    }
+    .file .subBtn a {
+        font-size: 1.1rem;
+    }
+    .add_task a {
+        font-size: 1rem;
+    }
+    .task_input select {
+        font-size: .8rem;
+    }
+    .task_area .task_status {
+        height: 30px;
+        width: 150px;
+    }
+    .task {
+        width: 150px;
+    }
+    .task_detail_header .task_details {
+        width: 1200px;
+        height: 650px;
+        margin: 3% auto;
+    }
+    .task_title h3 {
+        font-size: 1.5rem;
+    }
+    .task_bar p {
+        font-size: 1rem;
+    }
+    .task_bar .status select {
+        font-size: .7rem;
+    }
+    .task_bar label {
+        font-size: 1.2rem;
+    }
+    .task_bar .status,
+    .task_bar .sdate,
+    .task_bar .ddate,
+    .task_bar .days {
+        line-height: 1rem;
+    }
+    .ext_function .desc {
+        line-height: 1rem;
+    }
+    .ext_function .desc label,
+    .desc p {
+        font-size: 1rem;
+    }
+    .ext_function .add_file i {
+        font-size: .8rem;
+    }
+    .ext_function .add_file label {
+        font-size: 1rem;
     }
     /* Task */
 }

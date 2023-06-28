@@ -73,4 +73,12 @@ setInterval(() => {
 
 // Search User form
 
+// Loading Screen
+var loadTime;
+const loadScreen = () => {
+    loadTime = setTimeout(finishLoad, 3000);
+}
 
+const finishLoad = () => {
+    document.getElementById("loader").style.display = "none";
+}

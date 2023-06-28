@@ -17,6 +17,7 @@ VALUES ('{$projectName}' ,
 '{$end_date}' ,
 '{$owner_id}')";
 mysqli_query($dbconnection , $sql);
+$_SESSION['message'] = "Project Created !";
 
 header('Location: ../system_home/system_home_page.php');
 

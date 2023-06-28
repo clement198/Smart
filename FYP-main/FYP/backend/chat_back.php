@@ -8,7 +8,7 @@ $receive_id = mysqli_real_escape_string($dbconnection , $_POST['receiverid']);
 
  // Take Message from DB
 $msg_sql = "SELECT * FROM msg_db WHERE sender_id = $send_id AND receiver_id = $receive_id 
-OR sender_id = $receive_id AND receiver_id = $send_id";
+OR sender_id = $receive_id AND receiver_id = $send_id ORDER BY msgID DESC";
 $check_msg = mysqli_query($dbconnection , $msg_sql);
 
 //sender Image

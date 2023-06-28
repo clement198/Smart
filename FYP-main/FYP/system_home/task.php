@@ -13,6 +13,7 @@ if(empty($id)){
 }
 
 $project_id = $_GET['projectid'];
+$_SESSION['projectid'] = $project_id; 
 
 $project_data = "SELECT * FROM project_db WHERE projectID = $project_id";
 $check = mysqli_query($dbconnection , $project_data);
@@ -26,6 +27,7 @@ $result = mysqli_fetch_assoc($check);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../home/index.css">
+    <link rel="stylesheet" href="notification.css">
     <!-- Google Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +39,7 @@ $result = mysqli_fetch_assoc($check);
 </head>
 <body>
     <header class="top-bar">
-        <div class="user">
+        <div class="user_bar">
         <a href="profile.php"><img src="../system_home/user_image/<?=$data['user_img']?>" alt=""></a>
         <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
         </div>
@@ -52,29 +54,35 @@ $result = mysqli_fetch_assoc($check);
             </a>
         </div>
         <ul class="menu-list">
-        <li><a href="system_home_page.php"><i class='bx bxs-home' ></i>Home</a></li>
-            <li><a href="system_dash.php" ><i class='bx bxs-dashboard' ></i>Dashboard</a></li>
-            <li><a href="system_chat.php"><i class='bx bxs-chat' ></i>Chat</a></li>
-            <li><a href="#"><i class='bx bxs-group' ></i>Team Member</a></li>
+        <li><a href="system_home_page.php"><i class='bx bxs-home' ></i>Project Management</a></li>
+        <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="calender.php"><i class='bx bxs-chat'></i>Calender</a></li>
+            <li><a href="#"><i class='bx bxs-group'></i>Team Member</a></li>
+        <li><a href="system_chat.php"><i class='bx bxs-chat' ></i>Chat</a></li>
         </ul>
     </div>
 
     <div class="task_section">
-        <div class="project_detail">
-            <h3><?=$result['project_name']?></h3>
-            <div class="add_task" onclick="myTask()">
-            <a href="#">
+    <div class="project_detail">
+    <h3><?=$result['project_name']?></h3>
+    <?php
+if ($result['ownerID'] == $data['uniqueID']) {
+    echo "
+            <div class='add_task' onclick='myTask()'>
+            <a href='#'>
                 <i class='bx bx-list-plus'></i>
             </a>
-        </div>
-        </div>
+            </div>
+    ";
+}
+?>
+</div>
 
         <div class="task_area">
 
         <div class="task_list">
             <div class="task_status" id="new">
                 <p>New Task</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'New Task'";
@@ -101,7 +109,6 @@ $result = mysqli_fetch_assoc($check);
         <div class="task_list">
             <div class="task_status" id="progress">
                 <p>In Progress</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Progress'";
@@ -127,7 +134,6 @@ $result = mysqli_fetch_assoc($check);
         <div class="task_list">
             <div class="task_status" id="hold">
                 <p>On Hold</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'On Hold'";
@@ -153,7 +159,6 @@ $result = mysqli_fetch_assoc($check);
         <div class="task_list">
             <div class="task_status" id="cancel">
                 <p>Cancelled</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Cancelled'";
@@ -179,7 +184,6 @@ $result = mysqli_fetch_assoc($check);
         <div class="task_list">
             <div class="task_status" id="review">
                 <p>In Review</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Review'";
@@ -205,7 +209,6 @@ $result = mysqli_fetch_assoc($check);
         <div class="task_list">
             <div class="task_status" id="complete">
                 <p>Completed</p>
-                <p class="count">1</p>
             </div>
             <?php
             $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Completed'";
@@ -278,6 +281,24 @@ $result = mysqli_fetch_assoc($check);
             </div>
         </form>
     </div>
+
+    <?php
+    
+    if(isset($_SESSION['message'])){
+        echo "
+        <figure class='notification'>
+            <div class='notification_body'>
+            <i class='bx bx-check-circle'></i>
+                <p>".$_SESSION['message']."</p>
+                <i class='bx bx-party'></i>
+            </div>
+            <div class='progress_bar'></div>
+        </figure>
+        ";
+        unset($_SESSION['message']);
+    }
+    
+    ?>
 
 <script type="text/javascript" src="../home/index.js"></script>
 </body>

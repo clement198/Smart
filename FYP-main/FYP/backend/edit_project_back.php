@@ -16,6 +16,7 @@ $sql = "UPDATE project_db SET
     due_date = '$end_date'
     WHERE projectID = $project_id";
     mysqli_query($dbconnection , $sql);
+    $_SESSION['message'] = "Project Has been Updated";
 
     header('Location: ../system_home/system_home_page.php');
 

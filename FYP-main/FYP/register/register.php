@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../home/index.css">
+    <link rel="stylesheet" href="../system_home/notification.css">
     <!-- Google Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +40,16 @@
                     <input class="pass" name="pass"  type="password" placeholder="Password" required>
                     <i id="show" onclick="showPass()" class='bx bx-hide'></i>
                 </div>
-                
+
+                <label for="name">Department :</label>
+                <input type="text" name="department" placeholder="Marketing , HR , Back/Frontend Team" required>
+
+                <label for="">Role :</label>
+                <select name="role">
+                    <option value="Manager">Manager</option>
+                    <option value="Supervisor">Supervisor</option>
+                    <option value="Employee">Employee</option>
+                </select>
 
                 <input type="submit" value="Complete">
                 <a class="" href="../login/login.php">Already Have Account ? Log in</a>
@@ -47,6 +57,24 @@
         </div>
     </div>
     </form>
+
+    <?php
+    session_start();
+    if(isset($_SESSION['message'])){
+        echo "
+        <figure class='notification'>
+            <div class='notification_body'>
+            <i class='bx bxs-user-plus'></i>
+                <p>".$_SESSION['message']."</p>
+                <i class='bx bx-party'></i>
+            </div>
+            <div class='progress_bar'></div>
+        </figure>
+        ";
+        unset($_SESSION['message']);
+    }
+    
+    ?>
     
 <script type="text/javascript" src="../home/index.js"></script>
 </body>
