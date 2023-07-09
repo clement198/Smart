@@ -5,4 +5,3 @@ unset($_SESSION['id']);
 unset($_SESSION['admin']);
 
 header('Location: ../login/login.php');
-?>

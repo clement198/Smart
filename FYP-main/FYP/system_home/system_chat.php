@@ -58,10 +58,9 @@ if (empty($id)) {
             </a>
         </div>
         <ul class="menu-list">
-            <li><a href="system_home_page.php"><i class='bx bxs-home'></i>Project Management</a></li>
-            <li><a href="system_dash.php"><i class='bx bxs-dashboard' ></i>Dashboard</a></li>
-            <li><a href="calender.php"><i class='bx bxs-chat' ></i>Calender</a></li>
-            <li><a href="#"><i class='bx bxs-group' ></i>Team Member</a></li>  
+            <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="system_home_page.php"><i class='bx bx-world'></i>Project Management</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
             <li><a href="#" class="active"><i class='bx bxs-chat'></i>Chat</a></li>
         </ul>
     </div>
@@ -129,7 +128,7 @@ if (empty($id)) {
                     </div>
                     ";
 
-                    
+
 
                 echo "
                     
@@ -141,7 +140,7 @@ if (empty($id)) {
                         <label for='fileBtn'>
                         <i class='bx bx-file'></i>
                         </label>
-                        <button class='sndBtn'><i class='bx bxs-send'></i></button>
+                        <button class='sndBtn'><i class='bx bx-send bx-fade-right' ></i></i></button>
                     </form>
         
                 ";
@@ -153,7 +152,7 @@ if (empty($id)) {
 
     <!-- Chat Notification -->
 
-    
+
 
 
     <?php

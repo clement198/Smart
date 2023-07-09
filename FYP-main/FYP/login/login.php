@@ -59,13 +59,25 @@
                     <i id="show" onclick="showPass()" class='bx bx-hide'></i>
                 </div>
 
-                <a href="#">Forgot Password ?</a>
+                <a href="#" onclick="forget()">Forgot Password ?</a>
 
                 <input type="submit" value="Login">
                 <a href="../register/register.php">Do not have account yet ?</a>
 
             </form>
 
+        </div>
+    </div>
+
+    <div class="forgot_pass ">
+        <div class="verify">
+            <i class='bx bx-x' onclick="forget()"></i>
+            <form action="../system_home/forgot_pass.php" method="POST">
+                <h1>Verification</h1>
+                <p>We will send you a verification code to your email</p>
+                <input type="text" name="email" placeholder="Enter Your Email" required>
+                <input type="submit" name="submit">
+            </form>
         </div>
     </div>
 

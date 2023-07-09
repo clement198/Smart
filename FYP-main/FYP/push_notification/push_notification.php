@@ -8,7 +8,22 @@
 </head>
 
 <body>
+<div class="text">
+<h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit vel veritatis quae illo assumenda veniam totam! Amet adipisci tempora quos non iste ipsum deserunt obcaecati facere blanditiis, veritatis debitis temporibus!</h1>
+</div>
 
+<style>
+    .text {
+        
+        width: 200px;
+        border: 1px solid #000;
+    }
+
+    h1 {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+</style>
 <p id="countdown"></p>
 
     <!-- Days Countdown -->

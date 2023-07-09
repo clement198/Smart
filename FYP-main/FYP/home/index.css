@@ -13,13 +13,13 @@ body {
     left: 0;
     right: 0;
     background-color: #e6e6e6;
-    font-family: 'Dongle', sans-serif;
+    font-family: "Dongle", sans-serif;
     font-size: 30px;
     z-index: -1;
-    background: radial-gradient(circle, transparent 25%, #FFf 26%), linear-gradient(45deg, transparent 46%, #FF7553 47%, #FF7553 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #FF7553 47%, #FF7553 52%, transparent 53%);
+    background: radial-gradient(circle, transparent 25%, #fff 26%), linear-gradient( 45deg, transparent 46%, #ff7553 47%, #ff7553 52%, transparent 53%), linear-gradient( 135deg, transparent 46%, #ff7553 47%, #ff7553 52%, transparent 53%);
     background-size: 2em 2em;
-    background-color: #FFf;
-    opacity: 1
+    background-color: #fff;
+    opacity: 1;
 }
 
 
@@ -58,7 +58,7 @@ header {
 }
 
 .navbar .list a {
-    color: #4E5B66;
+    color: #4e5b66;
     font-size: 2.1rem;
     font-weight: 500;
     margin: 0px 20px;
@@ -67,9 +67,9 @@ header {
 }
 
 .navbar .list a:hover {
-    color: #FF7553;
-    background-color: #4E5B66;
-    transition: .5s;
+    color: #ff7553;
+    background-color: #4e5b66;
+    transition: 0.5s;
 }
 
 .navbar .log {
@@ -82,7 +82,7 @@ header {
 
 .navbar .log a {
     font-size: 2.1rem;
-    color: #4E5B66;
+    color: #4e5b66;
     background-color: #fff;
     border-radius: 10px;
     padding: 0 20px 0 20px;
@@ -90,7 +90,7 @@ header {
 }
 
 .navbar .log i {
-    color: #FF7553;
+    color: #ff7553;
     font-size: 1.5rem;
 }
 
@@ -104,8 +104,8 @@ header {
 }
 
 .navbar .log #menu:hover {
-    background-color: #4E5B66;
-    transition: .5s ease;
+    background-color: #4e5b66;
+    transition: 0.5s ease;
 }
 
 .navbar .log a {
@@ -114,9 +114,9 @@ header {
 }
 
 .navbar .log a:hover {
-    color: #FF7553;
-    background-color: #4E5B66;
-    transition: .5s;
+    color: #ff7553;
+    background-color: #4e5b66;
+    transition: 0.5s;
 }
 
 
@@ -134,9 +134,9 @@ header {
     width: 500px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
-    transition: all .9s ease;
+    transition: all 0.9s ease;
 }
 
 #loader {
@@ -194,12 +194,12 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
-    color: #FF7553;
+    background-color: #4e5b66;
+    color: #ff7553;
 }
 
 .login-box .login a {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .login .myPass {
@@ -215,7 +215,7 @@ input[type="password"] {
 .login-box .login i {
     padding-right: 15px;
     cursor: pointer;
-    color: #FF7553;
+    color: #ff7553;
 }
 
 
@@ -233,7 +233,7 @@ input[type="password"] {
     width: 500px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
 }
 
@@ -262,7 +262,7 @@ input[type="password"] {
     display: block;
     width: 98%;
     height: 55px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     padding-left: 10px;
     border: none;
     border-radius: 5px;
@@ -277,14 +277,14 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
-    color: #FF7553;
+    background-color: #4e5b66;
+    color: #ff7553;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
 .input-box .input a {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .input-box .myPass {
@@ -299,7 +299,7 @@ input[type="password"] {
 
 .input-box #show {
     cursor: pointer;
-    color: #FF7553;
+    color: #ff7553;
     padding-right: 15px;
 }
 
@@ -347,23 +347,23 @@ input[type="password"] {
     padding: 6px 50px 6px 20px;
     border-radius: 10px;
     width: 200px;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .side-bar .menu-list a.active {
-    background-color: #4E5B66;
-    color: #FF7553;
+    background-color: #4e5b66;
+    color: #ff7553;
     width: 180px;
 }
 
 .side-bar .menu-list a:hover {
     color: #fff;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     width: 180px;
 }
 
 .side-bar .menu-list i {
-    color: #FF7553;
+    color: #ff7553;
     padding-right: 7px;
 }
 
@@ -384,20 +384,20 @@ input[type="password"] {
     aspect-ratio: 5/3;
     object-fit: cover;
     right: 10%;
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 40px;
     height: 40px;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .top-bar .user_bar img:hover {
-    border: 2px solid #FF7553;
+    border: 2px solid #ff7553;
 }
 
 .top-bar .user_bar .logout {
     color: #fff;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
     display: flex;
     align-items: center;
 }
@@ -405,33 +405,33 @@ input[type="password"] {
 .top-bar .user_bar li {
     position: absolute;
     right: 3%;
-    color: #FF7553;
+    color: #ff7553;
     font-size: 1.6rem;
     padding: 0 10px 0 10px;
     border-radius: 3px;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     border: 1px solid #000;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .top-bar .user_bar i {
-    color: #FF7553;
+    color: #ff7553;
     padding-left: 5px;
 }
 
 .top-bar .user_bar li:hover {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
     background-color: #fff;
 }
 
 .top-bar .user_bar a:hover {
-    color: #4E5B66;
+    color: #4e5b66;
 }
 
 .top-bar .location {
     position: absolute;
     left: 20%;
-    color: #4E5B66;
+    color: #4e5b66;
 }
 
 .profile {
@@ -445,7 +445,7 @@ input[type="password"] {
     width: 700px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
 }
 
@@ -456,12 +456,22 @@ input[type="password"] {
     padding-top: 10px;
 }
 
+.profile label {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.profile p {
+    background: #eee;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
 .profile .user_img img {
-    border: 2px solid #FF7553;
+    border: 2px solid #ff7553;
     aspect-ratio: 5/3;
     object-fit: cover;
     border-radius: 200px;
-    padding: 10px;
     width: 100px;
     height: 100px;
 }
@@ -486,21 +496,21 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     margin-top: 20px;
     margin-bottom: 10px;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .profile input[type="submit"]:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
 .profile input:focus {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .profile .upload {
@@ -511,20 +521,20 @@ input[type="password"] {
 
 .profile .upload label {
     text-align: center;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     cursor: pointer;
     width: 50%;
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 5px;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .profile .upload label:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
@@ -554,11 +564,12 @@ input[type="password"] {
     height: fit-content;
     width: 100%;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(78, 91, 102, .5);
+    box-shadow: 5px 5px 10px rgba(78, 91, 102, 0.5);
 }
 
 .project_area .add_project label {
     padding-right: 10px;
+    font-weight: 300;
 }
 
 .project_area .add_project a i {
@@ -569,10 +580,10 @@ input[type="password"] {
     width: 200px;
     height: 50px;
     font-size: 3rem;
-    color: #FF7553;
+    color: #ff7553;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(78, 91, 102, .5);
-    transition: all .2s ease-in;
+    box-shadow: 5px 5px 10px rgba(78, 91, 102, 0.5);
+    transition: all 0.2s ease-in;
 }
 
 .project_area .add_project a i:hover {
@@ -583,7 +594,7 @@ input[type="password"] {
 
 .blur {
     display: none;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -599,7 +610,7 @@ input[type="password"] {
     width: 500px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
 }
 
@@ -609,12 +620,13 @@ input[type="password"] {
 
 .popup_form h1 {
     font-size: 4rem;
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .project_form label {
     width: 160px;
     display: inline-block;
+    font-weight: 300;
 }
 
 .add_user {
@@ -624,7 +636,7 @@ input[type="password"] {
 .search_bar {
     display: none;
     position: absolute;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     width: 400px;
     height: 200px;
     border-radius: 10px;
@@ -663,8 +675,8 @@ input[type="password"] {
     font-size: 1rem;
     font-weight: bold;
     background-color: #fff;
-    color: #4E5B66;
-    transition: all .2s ease-in;
+    color: #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .search_bar input[type="submit"]:hover,
@@ -683,7 +695,7 @@ input[type="password"] {
     padding-left: 10px;
     padding-right: 10px;
     border: 1px solid #efefef;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .add_user i {
@@ -696,8 +708,8 @@ input[type="password"] {
 }
 
 .add_user a:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
@@ -730,9 +742,9 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .popup_form .subBtn a {
@@ -747,22 +759,22 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1.9rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .popup_form .subBtn input[type="submit"]:hover,
 .popup_form .subBtn a:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
 .project_form input:focus,
 .project_form select:focus {
-    outline: 1px solid #FF7553;
+    outline: 1px solid #ff7553;
 }
 
 .project_item {
@@ -786,7 +798,7 @@ input[type="password"] {
 
 .project_item .project_details h3 {
     font-size: 1.5rems;
-    color: #FF7553;
+    color: #ff7553;
     line-height: 30px;
     word-break: break-word;
 }
@@ -817,18 +829,18 @@ input[type="password"] {
 
 .project_item .modify i {
     font-size: 1.2rem;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     padding: 10px;
     border-radius: 50%;
     transition: all 0.3s ease-in;
-    border: 1px solid #4E5B66;
+    border: 1px solid #4e5b66;
 }
 
 .project_item .modify i:hover {
     background-color: #fff;
-    color: #4E5B66;
-    border: 1px solid #FF7553;
+    color: #4e5b66;
+    border: 1px solid #ff7553;
 }
 
 @keyframes anim {
@@ -849,7 +861,7 @@ input[type="password"] {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -866,12 +878,12 @@ table {
     align-items: center;
     border: none;
     border-collapse: collapse;
-    box-shadow: 10px 10px 20px rgba(3, 3, 3, .7);
+    box-shadow: 10px 10px 20px rgba(3, 3, 3, 0.7);
 }
 
 table th {
     border-collapse: collapse;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
 }
 
@@ -903,7 +915,7 @@ table td a {
 
 .list:hover {
     background-color: #eee;
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .list img {
@@ -944,7 +956,7 @@ table td a {
     width: 300px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
 }
 
@@ -962,7 +974,7 @@ table td a {
 }
 
 .confirmation .content a:hover {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 
@@ -972,7 +984,7 @@ table td a {
 /* Edit Project */
 
 .edit {
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -987,7 +999,7 @@ table td a {
     width: 500px;
     height: max-content;
     background-color: #fff;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     border-radius: 20px;
 }
 
@@ -1010,9 +1022,9 @@ table td a {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .form .subBtn a {
@@ -1027,16 +1039,16 @@ table td a {
     border-radius: 5px;
     font-size: 1.9rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .form .subBtn input[type="submit"]:hover,
 .form .subBtn a:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
@@ -1052,14 +1064,14 @@ table td a {
     max-width: 1400px;
     height: 800px;
     margin: 5% 6% 5% auto;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
 }
 
 .task_section .project_detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     border-radius: 10px 10px 0 0;
     height: fit-content;
     width: 100%;
@@ -1094,27 +1106,27 @@ table td a {
 }
 
 .task_area #new {
-    background-color: rgba(128, 128, 128, .2);
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 .task_area #progress {
-    background-color: rgba(255, 255, 0, .2);
+    background-color: rgba(255, 255, 0, 0.2);
 }
 
 .task_area #hold {
-    background-color: rgba(255, 165, 0, .2);
+    background-color: rgba(255, 165, 0, 0.2);
 }
 
 .task_area #cancel {
-    background-color: rgba(255, 0, 0, .2);
+    background-color: rgba(255, 0, 0, 0.2);
 }
 
 .task_area #review {
-    background-color: rgba(173, 216, 230, .3);
+    background-color: rgba(173, 216, 230, 0.3);
 }
 
 .task_area #complete {
-    background-color: rgba(0, 255, 0, .2);
+    background-color: rgba(0, 255, 0, 0.2);
 }
 
 .task_area .task_status p {
@@ -1156,11 +1168,11 @@ table td a {
     border-radius: 50%;
     padding: 5px;
     margin: 7px 20px 10px 20px;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .add_task a:hover {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .add_task a {
@@ -1178,7 +1190,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
 }
 
 .showTaskForm {
@@ -1192,12 +1204,13 @@ table td a {
     padding: 60px;
     margin: 8% auto;
     border-radius: 10px;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
 }
 
 .task_input label {
     width: 170px;
     display: inline-block;
+    font-weight: 300;
 }
 
 .task_input input,
@@ -1211,7 +1224,7 @@ table td a {
 }
 
 .task_creation .task_form h3 {
-    color: #FF7553;
+    color: #ff7553;
     font-size: 4rem;
 }
 
@@ -1230,9 +1243,9 @@ table td a {
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .task_creation .subBtn a {
@@ -1247,16 +1260,16 @@ table td a {
     border-radius: 5px;
     font-size: 1.9rem;
     font-weight: bold;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .task_creation .subBtn input[type="submit"]:hover,
 .task_creation .subBtn a:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
@@ -1266,7 +1279,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
 }
 
 .task_detail_header .task_details {
@@ -1289,7 +1302,7 @@ table td a {
 .task_title h3 {
     margin-left: 20px;
     font-weight: 500;
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .function {
@@ -1302,17 +1315,17 @@ table td a {
     border-radius: 50%;
     padding: 10px;
     margin-right: 10px;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
     border: 1px solid #eee;
 }
 
 .function a:hover {
     background: #fff;
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .function i {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: #333;
 }
 
@@ -1323,7 +1336,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -1343,7 +1356,7 @@ table td a {
     border: none;
     background: #eee;
     border-radius: 5px;
-    font-size: .6rem;
+    font-size: 0.6rem;
     padding-left: 10px;
     width: 300px;
     height: 50px;
@@ -1351,7 +1364,7 @@ table td a {
 }
 
 .search_user input[type="text"]:focus {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .search_user .invBtn {
@@ -1361,29 +1374,29 @@ table td a {
 }
 
 .search_user .invBtn input {
-    background: #4E5B66;
+    background: #4e5b66;
     color: #fff;
-    font-size: .6rem;
+    font-size: 0.6rem;
     padding: 10px;
     cursor: pointer;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .search_user .invBtn a {
-    background: #4E5B66;
+    background: #4e5b66;
     color: #fff;
     font-size: 1rem;
     padding: 5px 10px 5px 10px;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .search_user .invBtn input:hover,
 .search_user .invBtn a:hover {
-    color: #FF7553;
+    color: #ff7553;
     background: #fff;
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .collab_user_detail {
@@ -1428,7 +1441,7 @@ table td a {
 }
 
 .user_details .remove i:hover {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .insert_file {
@@ -1438,7 +1451,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -1471,7 +1484,7 @@ table td a {
 
 .file .add_file i {
     font-size: 1rem;
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .file .add_file label {
@@ -1480,7 +1493,7 @@ table td a {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    color: #FF7553;
+    color: #ff7553;
     gap: 5px;
 }
 
@@ -1491,7 +1504,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -1520,10 +1533,10 @@ table td a {
     width: 45%;
     height: 55px;
     border-radius: 5px;
-    font-size: .8rem;
-    background-color: #4E5B66;
+    font-size: 0.8rem;
+    background-color: #4e5b66;
     color: #fff;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .subBtn a {
@@ -1537,16 +1550,16 @@ table td a {
     height: 55px;
     border-radius: 5px;
     font-size: 1.9rem;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
-    border: 1px solid #4E5B66;
-    transition: all .2s ease-in;
+    border: 1px solid #4e5b66;
+    transition: all 0.2s ease-in;
 }
 
 .subBtn input[type="submit"]:hover,
 .subBtn a:hover {
-    border: 1px solid #FF7553;
-    color: #4E5B66;
+    border: 1px solid #ff7553;
+    color: #4e5b66;
     background-color: #fff;
 }
 
@@ -1557,7 +1570,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -1580,7 +1593,7 @@ table td a {
 }
 
 .alert a:hover {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .task_bar {
@@ -1589,6 +1602,14 @@ table td a {
     justify-content: space-around;
     border-bottom: 1px solid #000;
     padding: 10px;
+}
+
+#task-status p {
+    border-radius: 20px;
+    padding: 0 10px 0 10px;
+    background: #7B8089;
+    color: #fff;
+    width: 100px;
 }
 
 .task_bar .info {
@@ -1609,16 +1630,19 @@ table td a {
     cursor: pointer;
     border: 1px solid #000;
     border-radius: 50%;
+    object-fit: cover;
     width: 10%;
 }
 
 .task_bar p {
     font-size: 1.8rem;
+    padding-left: 5px;
 }
 
 .task_bar label {
-    color: #FF7553;
+    color: #ff7553;
     font-size: 1.4rem;
+    padding-left: 5px;
 }
 
 .ext_function {
@@ -1660,13 +1684,13 @@ table td a {
     width: 100%;
     height: 50px;
     padding-left: 10px;
-    font-size: .8rem;
+    font-size: 0.8rem;
     border: none;
     border-radius: 10px;
 }
 
 .input_comment input:focus {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .input_comment button {
@@ -1682,7 +1706,7 @@ table td a {
 }
 
 .input_comment button:hover {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .display_comment {
@@ -1692,7 +1716,7 @@ table td a {
 }
 
 .display_comment img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 10px;
     width: 30px;
     height: 30px;
@@ -1714,7 +1738,7 @@ table td a {
 }
 
 .display_comment .message_detail span {
-    color: #FF7553;
+    color: #ff7553;
 }
 
 .display_comment .message_detail p {
@@ -1722,7 +1746,7 @@ table td a {
 }
 
 .display_comment .message_detail i {
-    font-size: .8rem;
+    font-size: 0.8rem;
     border: 1px solid #333;
     border-radius: 50%;
     padding: 3px;
@@ -1747,7 +1771,7 @@ table td a {
     max-width: 1200px;
     height: 800px;
     margin: 5% auto;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
 }
 
 .user_chat .side {
@@ -1764,7 +1788,7 @@ table td a {
 }
 
 .user_chat .main img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 40px;
     height: 40px;
@@ -1789,12 +1813,12 @@ table td a {
     padding: 20px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
     color: #000;
 }
 
 .user_chat .user_list img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 60px;
     height: 60px;
@@ -1810,7 +1834,7 @@ table td a {
 
 .user_chat .user_list .detail p {
     font-weight: 400;
-    color: #2CD5A0;
+    color: #2cd5a0;
 }
 
 .user_chat .user_list:hover {
@@ -1836,7 +1860,7 @@ table td a {
 }
 
 .user_chat .search input:focus {
-    outline: 1px solid #FF7553;
+    outline: 1px solid #ff7553;
 }
 
 .user_chat .search button {
@@ -1847,7 +1871,7 @@ table td a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     font-size: 1.2rem;
     border: 1px solid #000;
@@ -1855,12 +1879,12 @@ table td a {
     height: 30px;
     width: 30px;
     cursor: pointer;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .user_chat .search i:hover {
     background-color: #fff;
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
     color: #000;
 }
 
@@ -1885,7 +1909,7 @@ table td a {
 }
 
 .chat_area .user img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 40px;
     height: 40px;
@@ -1902,7 +1926,7 @@ table td a {
 
 .chat_area .detail p {
     font-weight: 400;
-    color: #2CD5A0;
+    color: #2cd5a0;
 }
 
 .chat_area .send {
@@ -1943,7 +1967,7 @@ table td a {
 }
 
 .chat_area .send img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 20px;
     height: 20px;
@@ -1987,7 +2011,7 @@ table td a {
 }
 
 .chat_area .receive img {
-    border: 2px solid #4E5B66;
+    border: 2px solid #4e5b66;
     border-radius: 50px;
     width: 20px;
     height: 20px;
@@ -2015,7 +2039,7 @@ table td a {
 }
 
 .chat_area .message input:focus {
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
 }
 
 .chat_area .message button {
@@ -2023,14 +2047,14 @@ table td a {
     align-items: center;
     justify-content: center;
     width: 50px;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     font-size: 1.2rem;
     padding: 5px;
     margin-left: 5px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .chat_area .message #fileBtn {
@@ -2042,20 +2066,20 @@ table td a {
     align-items: center;
     justify-content: center;
     width: 50px;
-    background-color: #4E5B66;
+    background-color: #4e5b66;
     color: #fff;
     font-size: 1.2rem;
     margin-left: 5px;
     border-radius: 50%;
     cursor: pointer;
-    transition: all .2s ease-in;
-    border: 1px solid #4E5B66;
+    transition: all 0.2s ease-in;
+    border: 1px solid #4e5b66;
 }
 
 .chat_area .message button:hover,
 .chat_area .message label:hover {
     background-color: #fff;
-    border: 1px solid #FF7553;
+    border: 1px solid #ff7553;
     color: #000;
 }
 
@@ -2067,12 +2091,12 @@ table td a {
 
 .calender {
     position: relative;
-    background-color: #fff;
+    background-color: #e4dcf1;
     border-radius: 10px;
     max-width: 1100px;
     height: 640px;
     margin: 6% 4% 8% auto;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
     z-index: -1;
 }
 
@@ -2092,7 +2116,7 @@ table td a {
 
 .calender .month_year i {
     cursor: pointer;
-    color: #FF7553;
+    color: #ff7553;
     font-size: 1.2rem;
 }
 
@@ -2124,7 +2148,7 @@ table td a {
 }
 
 .calender .days .day {
-    width: 14.10%;
+    width: 14.1%;
     height: 80px;
     display: flex;
     justify-content: start;
@@ -2137,14 +2161,8 @@ table td a {
     padding-left: 5px;
 }
 
-.calender .currentDate {
-    background: #eee;
-}
-
 .calender .currentDate p {
-    font-size: 1.5rem;
-    color: #FF7553;
-    text-shadow: 2px 2px 1px #ccc;
+    color: #ff7553;
 }
 
 .calender .balanceDate p {
@@ -2172,7 +2190,7 @@ table td a {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(78, 91, 102, .5);
+    background-color: rgba(78, 91, 102, 0.5);
     z-index: 1;
 }
 
@@ -2228,7 +2246,7 @@ table td a {
     background: #ee9ca7;
     z-index: 1;
     border-radius: 10px 0 0 10px;
-    transition: width .3s;
+    transition: width 0.3s;
     transition-timing-function: linear;
 }
 
@@ -2271,7 +2289,7 @@ table td a {
 
 .event_card .menu-dot {
     float: right;
-    font-size: .8rem;
+    font-size: 0.8rem;
     cursor: pointer;
     color: #bebaba;
 }
@@ -2296,38 +2314,43 @@ table td a {
     color: #fff;
     cursor: pointer;
     display: block;
-    font-size: .6rem;
+    font-size: 0.6rem;
     padding-bottom: 5px;
-    animation: dropDown 300ms ease-in-out forwards
+    animation: dropDown 300ms ease-in-out forwards;
 }
 
 @keyframes dropDown {
     0% {
-        transform: scaleY(0)
+        transform: scaleY(0);
     }
     80% {
-        transform: scaleY(1.1)
+        transform: scaleY(1.1);
     }
     100% {
-        transform: scaleY(1)
+        transform: scaleY(1);
     }
 }
 
 .drop-down i:hover {
-    color: #9BB8ED;
+    color: #9bb8ed;
 }
 
-.event_card h3 {
-    position: relative;
+.event_card .name {
     display: flex;
     align-items: center;
-    background: #9BB8ED;
+    background: #9bb8ed;
     color: #333;
     border-radius: 50px;
     width: 150px;
     height: 30px;
     padding: 3px 10px 3px 10px;
+}
+
+.event_card h3 {
     font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .date_time {
@@ -2337,7 +2360,7 @@ table td a {
 }
 
 .date_time p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: #afa8a8;
 }
 
@@ -2348,16 +2371,370 @@ table td a {
 /* Dashboard */
 
 .dashboard-container {
-    background-color: #fff;
-    border-radius: 10px;
+    position: relative;
     max-width: 1100px;
-    height: 600px;
-    margin: 6% 5% 7% auto;
-    box-shadow: 10px 10px 20px rgba(78, 91, 102, .5);
+    height: 100%;
+    margin: 6% 4% 8% auto;
+    z-index: -1;
+}
+
+.dashboard_details {
+    display: grid;
+    margin-left: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboard_card {
+    background: #e3c9c9;
+    width: 300px;
+    height: 150px;
+    padding: 10px 10px 10px 20px;
+    border-radius: 10px;
+    line-height: 30px;
+    box-shadow: 10px 10px 10px rgba(77, 77, 77, 0.5);
+}
+
+.dashboard_card h3 {
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.dashboard_card p {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.dashboard2 {
+    padding: 60px 40px 40px 40px;
+    display: grid;
+    grid-template-columns: 400px 600px;
+    gap: 50px;
+}
+
+.employee_dashboard {
+    position: relative;
+    background: #757F9A;
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
+    background: linear-gradient(to right, #D7DDE8, #757F9A);
+    border-radius: 10px;
+    padding: 50px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.employee_dashboard h3 {
+    font-size: 1.5rem;
+}
+
+.employee_details {
+    display: flex;
+    justify-content: center;
+}
+
+.employee_details table {
+    background: #fff;
+    width: fit-content;
+}
+
+.employee_details table th {
+    font-size: 1.2rem;
+}
+
+.employee_details table tr:nth-child(odd) {
+    background: #eee;
+}
+
+.task_dashboard {
+    background: #DAE2F8;
+    background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);
+    background: linear-gradient(to right, #D6A4A4, #DAE2F8);
+    border-radius: 10px;
+    padding: 50px;
+    width: 300px;
+    height: fit-content;
+}
+
+.statistic {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+}
+
+.statistic .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#task_count {
+    font-size: .8rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.container #completed {
+    background: #56F000;
+}
+
+.container #review {
+    background: #2DCCFF;
+}
+
+.container #cancel {
+    background: #FF3838;
+}
+
+.container #hold {
+    background: #A4ABB6;
+}
+
+.container #progress {
+    background: #FCE83A;
+}
+
+.container #new {
+    background: #FFB302;
+}
+
+
+/* Statistic Progress bar */
+
+:root {
+    --start-width: 0;
+    --end-width: 0;
+}
+
+.progress {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+    height: 5px;
+    border-radius: 4px;
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+}
+
+.progress-bar {
+    background-color: #A0E77D;
+    width: var(--end-width);
+    animation: progressAnimationStrike 6s;
+}
+
+@keyframes progressAnimationStrike {
+    from {
+        width: var(--start-width);
+    }
+    to {
+        width: var(--end-width);
+    }
 }
 
 
 /* Dashboard */
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination .page_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    width: 40px;
+    box-shadow: 5px 5px 5px rgba(77, 77, 77, 0.5);
+}
+
+.pagination .page_num a {
+    color: #fff;
+}
+
+
+/* Pagination */
+
+
+/* Verification */
+
+.forgot_pass {
+    display: none;
+    background-color: rgba(78, 91, 102, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.openForget {
+    display: block;
+}
+
+.forgot_pass .verify,
+.reset,
+.verification {
+    background: #fff;
+    width: fit-content;
+    padding: 60px;
+    margin: 8% auto;
+    border-radius: 10px;
+}
+
+.forgot_pass .verify i,
+.reset i,
+.verification i {
+    cursor: pointer;
+    padding-right: 10px;
+    color: #333;
+}
+
+.reset .newpass,
+.reset .repass {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #e6e6e6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.reset .newpass input[type="password"],
+.reset .repass input[type="password"] {
+    background: #e6e6e6;
+}
+
+.reset .newpass input[type="text"],
+.reset .repass input[type="text"] {
+    border: none;
+    background: #e6e6e6;
+    padding: 10px;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.reset input[type="submit"] {
+    background: #e6e6e6;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.forgot_pass .verify h1,
+.reset h1,
+.verification h1 {
+    color: #fd746c;
+}
+
+.forgot_pass .verify input,
+.verification input {
+    border: none;
+    background: #e6e6e6;
+    padding: 10px;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.forgot_pass .verify input[type="text"]:focus {
+    border: 1px solid #ee9ca7;
+}
+
+.forgot_pass .verify input[type="submit"]:hover,
+.reset input[type="submit"]:hover,
+.verification input[type="submit"]:hover {
+    background: #ee9ca7;
+    color: #fff;
+}
+
+
+/* Verification */
+
+
+/* View Profile */
+
+.view_profile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(78, 91, 102, 0.5);
+    z-index: 1;
+}
+
+.view_profile .name_card {
+    display: flex;
+    margin: 8% auto;
+    background: #1D2B64;
+    background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);
+    background: linear-gradient(to right, #F8CDDA, #1D2B64);
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.name_card .revert {
+    margin-right: 10px;
+}
+
+.view_profile .name_card .card_img {
+    display: flex;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 30px;
+}
+
+.name_card .card_img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name_card .card_detail {
+    line-height: 30px;
+}
+
+.name_card .card_detail h3 {
+    color: #fff;
+    text-shadow: 5px 4px 3px #000;
+    font-size: 1.5rem;
+}
+
+.name_card .card_detail p {
+    color: #fff;
+    text-shadow: 5px 4px 3px #000;
+    font-size: 1rem;
+}
+
+.name_card .send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    background: #1D2B64;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px 5px 10px;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+
+/* View Profile */
 
 
 /* Scroll bar */
@@ -2376,7 +2753,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #FF7553;
+    background-color: #ff7553;
     border-radius: 20px;
 }
 
@@ -2393,10 +2770,10 @@ body::-webkit-scrollbar-thumb {
     }
     .input-box .input input[type="text"],
     input[type="password"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .input-box .input input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     /* Sign up */
     /* Login */
@@ -2405,10 +2782,10 @@ body::-webkit-scrollbar-thumb {
     }
     .login-box .login input[type="text"],
     input[type="password"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .login-box .login input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     /* Login */
     /* System home */
@@ -2438,7 +2815,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 2.5rem;
     }
     .popup_form .subBtn input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .popup_form .subBtn a {
         font-size: 1.3rem;
@@ -2448,7 +2825,7 @@ body::-webkit-scrollbar-thumb {
         height: 180px;
     }
     .project_box {
-        grid-template-columns: repeat(2, .5fr);
+        grid-template-columns: repeat(2, 0.5fr);
     }
     .project_item .project_details h3 {
         font-size: 1.3rem;
@@ -2460,10 +2837,10 @@ body::-webkit-scrollbar-thumb {
     .project_form input[type="text"],
     .project_form input[type="date"],
     .project_form select {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .project_item .modify i {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .form {
         margin: 5% auto;
@@ -2472,7 +2849,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 2.5rem;
     }
     .form .subBtn input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .form .subBtn a {
         font-size: 1.3rem;
@@ -2496,10 +2873,10 @@ body::-webkit-scrollbar-thumb {
         height: 40px;
     }
     .user_chat .search i {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .user_chat .search input {
-        font-size: .5rem;
+        font-size: 0.5rem;
     }
     .chat_area .detail {
         font-size: 1rem;
@@ -2511,11 +2888,11 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .chat_area .message input {
-        font-size: .6rem;
+        font-size: 0.6rem;
     }
     .chat_area .message button,
     .chat_area .message label {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .chat_area .send a {
         font-size: 1rem;
@@ -2524,10 +2901,10 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .chat_area .send i {
-        font-size: .6rem;
+        font-size: 0.6rem;
     }
     .chat_area .receive i {
-        font-size: .6rem;
+        font-size: 0.6rem;
     }
     /* Chat */
     /* Profile */
@@ -2539,7 +2916,7 @@ body::-webkit-scrollbar-thumb {
     .profile input[type="text"],
     .profile input[type="password"],
     .profile input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .profile .upload label {
         font-size: 1rem;
@@ -2562,7 +2939,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .task_area .task p {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .task_area .add_task a {
         font-size: 1rem;
@@ -2571,25 +2948,25 @@ body::-webkit-scrollbar-thumb {
         margin: 4% auto;
     }
     .task_input input {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .task_creation .task_form h3 {
         font-size: 2rem;
     }
     .task_creation .subBtn input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .task_creation .subBtn a {
         font-size: 1.3rem;
     }
     .detail_form .subBtn input[type="submit"] {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .detail_form .subBtn a {
         font-size: 1.3rem;
     }
     .file .subBtn input[type="submit"] {
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
     .file .subBtn a {
         font-size: 1.1rem;
@@ -2598,7 +2975,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .task_input select {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .task_area .task_status {
         height: 30px;
@@ -2619,7 +2996,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .task_bar .status select {
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
     .task_bar label {
         font-size: 1.2rem;
@@ -2638,7 +3015,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 1rem;
     }
     .ext_function .add_file i {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
     .ext_function .add_file label {
         font-size: 1rem;

@@ -127,6 +127,14 @@ header .user:hover {
     display: block;
 }
 
+.msg_table {
+    display: none;
+}
+
+.showMsg {
+    display: block;
+}
+
 .table {
     display: flex;
     background: #fff;
@@ -181,6 +189,32 @@ header .user:hover {
 
 
 /* Table */
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination .page_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    width: 40px;
+    box-shadow: 5px 5px 5px rgba(77, 77, 77, 0.5);
+    margin-bottom: 20px;
+}
+
+.pagination .page_num a {
+    color: #fff;
+}
+
+
+/* Pagination */
 
 
 /* User Edit */

@@ -33,11 +33,9 @@ if (empty($id)) {
     <title>Home-Smart</title>
 </head>
 
-<body onload="loadScreen()">
+<body>
 
-    <div id="loader">
-        <img class="loading" src="../home/Smart-Project-1--unscreen.gif">
-    </div>
+
 
     <header class="top-bar">
         <div class="user_bar">
@@ -55,24 +53,22 @@ if (empty($id)) {
             </a>
         </div>
         <ul class="menu-list">
-            <li><a href="#" class="active"><i class='bx bxs-home'></i>Project Management</a></li>
             <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="calender.php"><i class='bx bxs-chat'></i>Calender</a></li>
-            <li><a href="#"><i class='bx bxs-group'></i>Team Member</a></li>
+            <li><a href="#" class="active"><i class='bx bx-world'></i>Project Management</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
             <li><a href="system_chat.php"><i class='bx bxs-chat'></i>Chat</a></li>
-
         </ul>
     </nav>
 
-    <div class="project_area" id="myWord">
+    <div class="project_area">
 
         <?php
 
         $privilege_sql = "SELECT role FROM user_db WHERE role = 'Manager'";
-        $check_privilege_sql = mysqli_query($dbconnection , $privilege_sql);
+        $check_privilege_sql = mysqli_query($dbconnection, $privilege_sql);
         $privilege_result = mysqli_fetch_assoc($check_privilege_sql);
 
-        if($privilege_result['role'] == $data['role']){
+        if ($privilege_result['role'] == $data['role']) {
             echo "
             <div class='add_project'>
                 <label for=''>New Project : </label>
@@ -122,7 +118,7 @@ if (empty($id)) {
                 </form>
             </div>
         </div>
-        
+
         <div class='project_box'>
             <?php
 
@@ -135,9 +131,15 @@ if (empty($id)) {
                 while ($result = mysqli_fetch_array($check)) {
                     echo "
                 
-                <div class='project_item'>
-                <i class='bx bx-task'></i>
-                <a href='task.php?projectid=" . $result['projectID'] . "'>
+                <div class='project_item'>";
+
+                    if ($result['project_type'] == 'Mobile Development') {
+                        echo " <img width='64' height='64' src='https://img.icons8.com/nolan/64/mobile-navigator.png' alt='mobile-navigator'/>";
+                    } else {
+                        echo "<img width='64' height='64' src='https://img.icons8.com/nolan/64/backend-development.png' alt='backend-development'/>";
+                    }
+
+                    echo "<a href='task.php?projectid=" . $result['projectID'] . "'>
                 <div class='project_details'>
                 <h3>" . $result['project_name'] . "</h3>
                 <h5>" . $result['project_type'] . "</h5>
@@ -201,24 +203,24 @@ if (empty($id)) {
 
 
         <!-- Chat Notification -->
-
         <?php
 
         if (isset($_SESSION['message'])) {
             echo "
-        <figure class='notification'>
-            <div class='notification_body'>
-            <i class='bx bx-check-circle'></i>
-                <p>" . $_SESSION['message'] . "</p>
-                <i class='bx bx-party'></i>
-            </div>
-            <div class='progress_bar'></div>
-        </figure>
-        ";
+    <figure class='notification'>
+        <div class='notification_body'>
+        <i class='bx bx-check-circle'></i>
+            <p>" . $_SESSION['message'] . "</p>
+            <i class='bx bx-party'></i>
+        </div>
+        <div class='progress_bar'></div>
+    </figure>
+    ";
             unset($_SESSION['message']);
         }
 
         ?>
+
 
         <script type="text/javascript" src="../home/search.js"></script>
 

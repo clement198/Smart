@@ -218,7 +218,7 @@ $permit_result = mysqli_fetch_assoc($check_permit);
             </div>
             <!-- Delete Task -->
             <div class="task_bar">
-                <div class="info">
+                <div class="info" id="task-status">
                     <label for="">Status : </label>
                     <p><?= $task_result['status'] ?></p>
                 </div>
@@ -254,6 +254,7 @@ $permit_result = mysqli_fetch_assoc($check_permit);
                         var now = new Date().getTime();
                         //Get the distance between latest date and the countdown date
                         var distance = countDownDate - now;
+                        console.log(distance);
 
                         //Count Time 
                         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -261,7 +262,7 @@ $permit_result = mysqli_fetch_assoc($check_permit);
 
                         document.getElementById("countdown").innerHTML = days + " Days " + hours + " Hours " + "left";
 
-                        if (distance < 2) {
+                        if (distance < 1) {
                             clearInterval(x);
                             document.getElementById("countdown").innerHTML = "Due!!!";
                         }
@@ -304,9 +305,17 @@ $permit_result = mysqli_fetch_assoc($check_permit);
                         $check_user_row = mysqli_num_rows($check_user_sql);
                         if ($check_user_row > 0) {
                             while ($result_user_sql = mysqli_fetch_assoc($check_user_sql)) {
-                                echo "
-                        <img src='user_image/" . $result_user_sql['user_img'] . "' onclick='remove_user()'>
-                        ";
+                                if ($data_user_sql['role'] == "Manager") {
+                                    echo "
+                                    <img src='user_image/" . $result_user_sql['user_img'] . "' onclick='remove_user()'>
+                                    ";
+                                } else {
+                                    echo "
+                                    
+                                    <img src='user_image/" . $result_user_sql['user_img'] . "'>
+                                    
+                                    ";
+                                }
                             }
                         }
 
@@ -441,14 +450,14 @@ $permit_result = mysqli_fetch_assoc($check_permit);
 
 
 
-                if ($permit_result['user_id'] == $id || $project_sql_data['ownerID'] == $data_user_sql['uniqueID']) {
-                
-                    echo "
+            if ($permit_result['user_id'] == $id || $project_sql_data['ownerID'] == $data_user_sql['uniqueID']) {
+
+                echo "
                     <div class='comment_section'>
                     <form action='#' class='comment' method='POST'>
                         <div class='input_comment'>
-                            <input type='text' name='taskid' value=".$task_id." hidden>
-                            <input type='text' name='senderid' value=".$id." hidden>
+                            <input type='text' name='taskid' value=" . $task_id . " hidden>
+                            <input type='text' name='senderid' value=" . $id . " hidden>
                             <input name='comment' type='text' placeholder='Write your comment ...' autocomplete='off'>
                             <button class='snd_comment'>
                                 <i class='bx bx-send'></i>
@@ -457,10 +466,8 @@ $permit_result = mysqli_fetch_assoc($check_permit);
                     </form>
                 </div>
                     ";
-                    
-                    
-                }
-            
+            }
+
             ?>
 
 
