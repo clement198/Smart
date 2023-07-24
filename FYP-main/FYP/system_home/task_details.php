@@ -77,6 +77,17 @@ $permit_result = mysqli_fetch_assoc($check_permit);
                     ";
                     }
 
+                    if ($data_user_sql['role'] == 'Supervisor') {
+                        echo "
+
+                    <!-- Invite User -->
+                    <a href='#' onclick='inviteFunc()'>
+                        <i class='bx bx-user-plus'></i>
+                    </a>
+                    <!-- Invite User -->
+                    ";
+                    }
+
                     ?>
 
                     <?php

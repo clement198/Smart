@@ -313,12 +313,7 @@ input[type="password"] {
     position: fixed;
     padding: 10px;
     margin-right: 400px;
-    background: #000000;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #333;
     height: 100%;
     width: 260px;
 }
@@ -409,7 +404,7 @@ input[type="password"] {
     font-size: 1.6rem;
     padding: 0 10px 0 10px;
     border-radius: 3px;
-    background-color: #4e5b66;
+    background-color: #333;
     border: 1px solid #000;
     transition: all 0.2s ease-in;
 }
@@ -434,30 +429,128 @@ input[type="password"] {
     color: #4e5b66;
 }
 
+.profile_dropdown {
+    display: none;
+    position: absolute;
+    right: 10%;
+    top: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #333;
+    z-index: -1;
+}
+
+.showOpt {
+    display: block;
+}
+
+.profile_dropdown a {
+    display: flex;
+    color: #e6e6e6;
+    padding: 0 10px 0 10px;
+    transition: all .2s ease-in;
+    border-radius: 30px;
+}
+
+.profile_dropdown a:hover {
+    background: #fff;
+    color: #333;
+}
+
+.profile_details {
+    position: relative;
+    max-width: 1100px;
+    height: 100%;
+    margin: 6% 0 6% auto;
+    z-index: -1;
+}
+
 .profile {
-    min-height: 100vh;
-    margin: 6% auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    width: 700px;
-    height: max-content;
-    background-color: #fff;
+    width: 1000px;
     box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
-.profile .user_img {
+.profile .user_detail_header {
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    width: 1000px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+}
+
+.profile .user_detail_header h3 {
+    color: #D7DDE8;
+    font-size: 2rem;
+}
+
+.profile .user_img {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+
+.profile .user_img img {
+    border: 2px solid #fff;
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    border-radius: 200px;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+.profile .user_img .upload {
+    background-color: #4e5b66;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.profile .upload label {
+    font-weight: 300;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.profile .upload:hover {
+    border: 1px solid #ff7553;
+    color: #4e5b66;
+    background-color: #fff;
+}
+
+.profile .user_img input[type="file"] {
+    font-size: 15px;
+    display: none;
+}
+
+.profile .detail_input {
+    /* position: absolute;
+    top: 60%;
+    left: 50%; */
+    background: #fff;
+    margin: 200px 0 50px 0;
+    /* transform: translate(-50%, -50%); */
+    display: grid;
+    grid-template-columns: 200px 1fr;
 }
 
 .profile label {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
 }
 
@@ -465,15 +558,7 @@ input[type="password"] {
     background: #eee;
     padding-left: 10px;
     border-radius: 5px;
-}
-
-.profile .user_img img {
-    border: 2px solid #ff7553;
-    aspect-ratio: 5/3;
-    object-fit: cover;
-    border-radius: 200px;
-    width: 100px;
-    height: 100px;
+    margin-bottom: 20px;
 }
 
 .profile input[type="text"],
@@ -481,21 +566,20 @@ input[type="password"] {
     display: block;
     width: 350px;
     height: 50px;
-    font-size: 1rem;
+    font-size: .8rem;
     padding-left: 10px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 5px;
     background-color: #efefef;
 }
 
-.profile input[type="submit"] {
+.profile .saveBtn {
     cursor: pointer;
-    text-align: center;
-    width: 350px;
+    width: 150px;
     height: 50px;
     border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: .8rem;
     background-color: #4e5b66;
     color: #fff;
     margin-top: 20px;
@@ -513,34 +597,43 @@ input[type="password"] {
     border: 1px solid #ff7553;
 }
 
-.profile .upload {
+.employee_history {
+    position: relative;
+    max-width: 1100px;
+    height: 100%;
+    margin: 6% 0 6% auto;
+    z-index: -1;
+}
+
+.employee_history_task {
+    background: #fff;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
+}
+
+.employee_history_task .history_header {
+    border-radius: 10px;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    width: 1000px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.profile .upload label {
-    text-align: center;
-    background-color: #4e5b66;
-    color: #fff;
-    cursor: pointer;
-    width: 50%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 1px solid #4e5b66;
-    transition: all 0.2s ease-in;
+.history_header h3 {
+    color: #D7DDE8;
+    font-size: 2rem;
 }
 
-.profile .upload label:hover {
-    border: 1px solid #ff7553;
-    color: #4e5b66;
-    background-color: #fff;
-}
-
-.profile .user_img input[type="file"] {
-    font-size: 15px;
-    display: none;
+.history {
+    margin: auto;
+    width: fit-content;
+    padding: 50px;
+    word-wrap: break-word;
 }
 
 
@@ -1059,12 +1152,14 @@ table td a {
 /* Task */
 
 .task_section {
+    position: relative;
     background-color: #fff;
     border-radius: 10px;
     max-width: 1400px;
     height: 800px;
     margin: 5% 6% 5% auto;
     box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
+    z-index: -1;
 }
 
 .task_section .project_detail {
@@ -1160,6 +1255,12 @@ table td a {
     color: #000;
 }
 
+.func {
+    display: flex;
+    margin-right: 20px;
+    gap: 10px;
+}
+
 .add_task {
     display: flex;
     justify-content: center;
@@ -1167,7 +1268,6 @@ table td a {
     background-color: #fff;
     border-radius: 50%;
     padding: 5px;
-    margin: 7px 20px 10px 20px;
     transition: all 0.2s ease-in;
 }
 
@@ -1181,6 +1281,43 @@ table td a {
     justify-content: center;
     color: #333;
     font-size: 1.5rem;
+}
+
+.revert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.2s ease-in;
+}
+
+.revert a:hover {
+    color: #ff7553;
+}
+
+.revert a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1rem;
+}
+
+.recover_area {
+    display: none;
+    position: absolute;
+    background: #fff;
+    right: 0;
+}
+
+.display_recover {
+    display: block;
+}
+
+.recover_area table {
+    width: fit-content;
 }
 
 .task_creation {
@@ -1772,6 +1909,7 @@ table td a {
     height: 800px;
     margin: 5% auto;
     box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
+    z-index: -1;
 }
 
 .user_chat .side {
@@ -1785,6 +1923,7 @@ table td a {
     height: 20px;
     padding: 20px;
     border-bottom: 1px solid #eee;
+    z-index: -1;
 }
 
 .user_chat .main img {
@@ -2148,6 +2287,7 @@ table td a {
 }
 
 .calender .days .day {
+    position: relative;
     width: 14.1%;
     height: 80px;
     display: flex;
@@ -2155,6 +2295,21 @@ table td a {
     cursor: pointer;
     color: #333;
     border: 1px solid #cccccc9b;
+}
+
+.days .event {
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    color: #fff;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: .8rem;
 }
 
 .calender .days .day p {
@@ -2405,10 +2560,10 @@ table td a {
 }
 
 .dashboard2 {
-    padding: 60px 40px 40px 40px;
+    padding: 60px 30px 30px 10px;
     display: grid;
     grid-template-columns: 400px 600px;
-    gap: 50px;
+    gap: 40px;
 }
 
 .employee_dashboard {
@@ -2418,7 +2573,7 @@ table td a {
     background: linear-gradient(to right, #D7DDE8, #757F9A);
     border-radius: 10px;
     padding: 50px;
-    width: fit-content;
+    width: 550px;
     height: fit-content;
 }
 
@@ -2429,6 +2584,7 @@ table td a {
 .employee_details {
     display: flex;
     justify-content: center;
+    word-wrap: break-word;
 }
 
 .employee_details table {
@@ -2662,64 +2818,105 @@ table td a {
 /* View Profile */
 
 .view_profile {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(78, 91, 102, 0.5);
-    z-index: 1;
-}
-
-.view_profile .name_card {
-    display: flex;
-    margin: 8% auto;
-    background: #1D2B64;
-    background: -webkit-linear-gradient(to right, #F8CDDA, #1D2B64);
-    background: linear-gradient(to right, #F8CDDA, #1D2B64);
-    width: fit-content;
-    height: fit-content;
-    padding: 50px;
+    margin: 5% auto;
+    width: 1200px;
+    height: 800px;
     border-radius: 10px;
 }
 
-.name_card .revert {
-    margin-right: 10px;
+.name_card {
+    position: relative;
+    display: flex;
+    margin: 8% auto;
+    background: #fff;
+    width: 1000px;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
+}
+
+
+/* .view_profile .name_card {
+    position: relative;
+    display: flex;
+    margin: 15% auto;
+    background: #fff;
+    width: 1000px;
+    height: 300px;
+    border-radius: 10px;
+} */
+
+.profile_header {
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_header h3 {
+    color: #D7DDE8;
+    font-size: 2rem;
+}
+
+.name_card .back {
+    padding: 10px;
+    color: #D7DDE8;
+    background: #1D2B64;
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.back i {
+    font-size: .8rem;
 }
 
 .view_profile .name_card .card_img {
-    display: flex;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: fit-content;
-    height: fit-content;
-    margin-right: 30px;
+    padding: 20px;
 }
 
 .name_card .card_img img {
-    width: 60px;
-    height: 60px;
+    border: 2px solid #fff;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
 }
 
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .name_card .card_detail {
-    line-height: 30px;
+    height: fit-content;
+    width: fit-content;
+    line-height: 20px;
 }
 
 .name_card .card_detail h3 {
-    color: #fff;
-    text-shadow: 5px 4px 3px #000;
-    font-size: 1.5rem;
+    color: #333;
+    font-size: 1.3rem;
 }
 
 .name_card .card_detail p {
-    color: #fff;
-    text-shadow: 5px 4px 3px #000;
+    color: #333;
     font-size: 1rem;
+    font-weight: 300;
 }
 
 .name_card .send {
+    position: absolute;
+    right: 10%;
+    top: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2729,8 +2926,20 @@ table td a {
     width: fit-content;
     height: fit-content;
     padding: 5px 10px 5px 10px;
-    margin-left: 30px;
     overflow: hidden;
+}
+
+.history_table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_task_history {
+    background: #fff;
+    height: fit-content;
+    width: 1000px;
+    box-shadow: 10px 10px 20px rgba(78, 91, 102, 0.5);
 }
 
 
@@ -2908,7 +3117,7 @@ body::-webkit-scrollbar-thumb {
     }
     /* Chat */
     /* Profile */
-    .profile {
+    /* .profile {
         margin: 6% 25% 25% auto;
         width: 600px;
         height: max-content;
@@ -2924,7 +3133,7 @@ body::-webkit-scrollbar-thumb {
     .profile .user_img img {
         width: 80px;
         height: 80px;
-    }
+    } */
     /* Profile */
     /* Task */
     .task_section {

@@ -63,5 +63,19 @@ if (
     $update_project_task_total = "UPDATE project_db SET total_task = $count WHERE projectID =$project_id";
     mysqli_query($dbconnection, $update_project_task_total);
 
+    $sql2 = "SELECT * FROM task_db WHERE status = 'Completed' AND project_id  = $project_id";
+    $check_sql2 = mysqli_query($dbconnection, $sql2);
+    $sql_result2 = mysqli_num_rows($check_sql2);
+
+    $count1 = $sql_result2;
+
+    if ($count == $count1) {
+        $update_project_task_total1 = "UPDATE project_db SET completed_task = $count1 , status = 1 WHERE projectID =$project_id";
+        mysqli_query($dbconnection, $update_project_task_total1);
+    } else {
+        $update_project_task_total2 = "UPDATE project_db SET completed_task = $count1 , status = 0 WHERE projectID =$project_id";
+        mysqli_query($dbconnection, $update_project_task_total2);
+    }
+
     header('Location: ../system_home/task.php?projectid=' . $project_id);
 }

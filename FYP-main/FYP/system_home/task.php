@@ -42,8 +42,12 @@ $result = mysqli_fetch_assoc($check);
 <body>
     <header class="top-bar">
         <div class="user_bar">
-            <a href="profile.php"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
+            <a href="#" onclick="profileDrop()"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
             <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
+        </div>
+        <div class="profile_dropdown">
+            <a href="profile.php">My Profile</a>
+            <a href="task_history.php">My Project / Task History</a>
         </div>
         <div class="location">
             <h3>Task</h3>
@@ -58,7 +62,7 @@ $result = mysqli_fetch_assoc($check);
         <ul class="menu-list">
             <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li><a href="system_home_page.php"><i class='bx bx-world'></i>Project Management</a></li>
-            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calendar</a></li>
             <li><a href="system_chat.php"><i class='bx bxs-chat'></i>Chat</a></li>
         </ul>
     </div>
@@ -66,17 +70,64 @@ $result = mysqli_fetch_assoc($check);
     <div class="task_section">
         <div class="project_detail">
             <h3><?= $result['project_name'] ?></h3>
-            <?php
-            if ($result['ownerID'] == $data['uniqueID']) {
-                echo "
+            <div class="func">
+                <?php
+                if ($result['ownerID'] == $data['uniqueID']) {
+                    echo "
+
+                <div class='revert' onclick='myRevert()'>
+                <a href='#'>
+                    <i class='bx bx-revision'></i>
+                </a>
+                </div>
+
             <div class='add_task' onclick='myTask()'>
             <a href='#'>
                 <i class='bx bx-list-plus'></i>
             </a>
             </div>
+            
     ";
-            }
-            ?>
+                }
+                ?>
+            </div>
+        </div>
+
+        <div class="recover_area">
+            <div class="recover_list">
+                <table>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Task Description</th>
+                        <th>Start Date</th>
+                        <th>Status</th>
+                        <th>Recover</th>
+                    </tr>
+                    <?php
+
+                    $delete_list_sql = "SELECT * FROM task_db WHERE recycle = 1";
+                    $check_delete_list = mysqli_query($dbconnection, $delete_list_sql);
+
+                    if (mysqli_num_rows($check_delete_list) > 0) {
+                        while ($delete_data = mysqli_fetch_assoc($check_delete_list)) {
+                            echo "
+                        <tr>
+                            <td>" . $delete_data['task_name'] . "</td>
+                            <td>" . $delete_data['description'] . "</td>
+                            <td>" . $delete_data['start_date'] . "</td>
+                            <td>" . $delete_data['status'] . "</td>
+                            <td>
+                                <a href='../backend/recover_back.php?task_id=" . $delete_data['taskID'] . "'>Recover</a>
+                            </td>
+                        </tr>
+                        ";
+                        }
+                    }
+
+                    ?>
+
+                </table>
+            </div>
         </div>
 
         <div class="task_area">
@@ -86,7 +137,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>New Task</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'New Task'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'New Task' 
+                AND recycle = 0";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -112,7 +164,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>In Progress</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Progress'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Progress'
+                AND recycle = 0 ";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -137,7 +190,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>On Hold</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'On Hold'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'On Hold'
+                AND recycle = 0";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -162,7 +216,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>Cancelled</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Cancelled'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Cancelled'
+                AND recycle = 0";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -187,7 +242,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>In Review</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Review'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'In Review'
+                AND recycle = 0";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -212,7 +268,8 @@ $result = mysqli_fetch_assoc($check);
                     <p>Completed</p>
                 </div>
                 <?php
-                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Completed'";
+                $task_sql = "SELECT * FROM task_db WHERE project_id = $project_id AND status = 'Completed'
+                AND recycle = 0";
                 $check_task = mysqli_query($dbconnection, $task_sql);
                 if (mysqli_num_rows($check_task) > 0) {
                     while ($task_data = mysqli_fetch_assoc($check_task)) {
@@ -302,6 +359,7 @@ $result = mysqli_fetch_assoc($check);
         ?>
 
         <script type="text/javascript" src="../home/index.js"></script>
+        <script type="text/javascript" src="../home/profileDropdown.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,10 @@ $sql = "SELECT * FROM user_db WHERE userID = $id";
 $check_result = mysqli_query($dbconnection, $sql);
 $data = mysqli_fetch_assoc($check_result);
 
+$sql1 = "SELECT * FROM user_db WHERE userID = $user_id";
+$check_result1 = mysqli_query($dbconnection, $sql1);
+$data1 = mysqli_fetch_assoc($check_result1);
+
 if (empty($id)) {
     header('Location:../login/login.php');
 }
@@ -44,21 +48,29 @@ if (empty($id)) {
     $profile_result = mysqli_fetch_assoc($check_profile);
 
     ?>
-
+    <div class="profile_header">
+        <h3>Profile</h3>
+    </div>
     <div class="view_profile">
+
+
         <div class="name_card">
-            <a href="system_dash.php" class="revert">
-                <img width="30" height="30" src="https://img.icons8.com/ios/50/000000/circled-left-2.png" alt="circled-left-2" />
+
+            <a href="system_dash.php" class="back">
+                <i class='bx bx-arrow-back'></i>
             </a>
             <div class="card_img">
                 <img src="user_image/<?= $profile_result['user_img'] ?>" alt="">
             </div>
-            <div class=" card_detail">
-                <h3><?= $profile_result['user_name'] ?></h3>
-                <p><?= $profile_result['user_email'] ?></p>
-                <p><?= $profile_result['department'] ?></p>
-                <p><?= $profile_result['role'] ?></p>
+
+            <div class="card">
+                <div class=" card_detail">
+                    <h3><?= $profile_result['user_name'] ?></h3>
+                    <p><?= $profile_result['department'] ?></p>
+                    <p><?= $profile_result['role'] ?></p>
+                </div>
             </div>
+
             <?php
 
 
@@ -90,7 +102,143 @@ if (empty($id)) {
             }
 
             ?>
+        </div>
 
+        <div class="history_table">
+            <div class="user_task_history">
+                <?php
+
+                if ($data1['role'] == "Manager") {
+                    echo "
+        <div class='employee_history_task'>
+        <div class='history_header'>
+            <h3>Project / Task History</h3>
+        </div>
+
+        <div class='history'>
+            <table>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Project Type</th>
+                    <th>Created Date</th>
+                    <th>Handles By</th>
+                </tr>
+                ";
+
+                    $data_per_page = 4;
+
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+
+                    $default_page = ($page - 1) * 3;
+
+
+                    $history_sql = "SELECT * FROM history_db 
+                JOIN user_db ON user_db.uniqueID = project_owner WHERE uniqueID = $data1[uniqueID] LIMIT $default_page , $data_per_page";
+                    $check_history = mysqli_query($dbconnection, $history_sql);
+                    if (mysqli_num_rows($check_history) > 0) {
+                        while ($history_data = mysqli_fetch_assoc($check_history)) {
+                            echo "
+                        <tr>
+                        <td>" . $history_data['task_name'] . "</td>
+                        <td>" . $history_data['task_desc'] . "</td>
+                        <td>" . $history_data['hist_date'] . "</td>
+                        <td>" . $history_data['user_name'] . "</td>
+                        <td>" . $history_data['hist_status'] . "</td>
+                        </tr>
+                        ";
+                        }
+                    }
+
+
+                    echo "</table>
+            <div class='pagination'>";
+                    $get_page_sql = "SELECT * FROM history_db";
+                    $check_page_sql = mysqli_query($dbconnection, $get_page_sql);
+                    $page_result = mysqli_num_rows($check_page_sql);
+                    $total_page = ceil($page_result / $data_per_page);
+
+                    for ($i = 1; $i < $total_page; $i++) {
+                        echo "
+                        <div class='page_num'>
+                            <a href='task_history.php?page=" . $i . "'>" . $i . "</a>
+                            </div>
+                            ";
+                    }
+                    echo "
+        </div>
+
+        ";
+                } else {
+                    echo "
+        <div class='employee_history_task'>
+        <div class='history_header'>
+            <h3>Project / Task History</h3>
+        </div>
+
+        <div class='history'>
+            <table>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Task Description</th>
+                    <th>Assigned Date</th>
+                    <th>Assigned By</th>
+                    <th>Task Status</th>
+                </tr>
+                ";
+                    $data_per_page = 4;
+
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+
+                    $default_page = ($page - 1) * 3;
+
+                    $history_sql = "SELECT * FROM history_db 
+                JOIN user_db ON user_db.userID = assign_user_id WHERE user_id = $user_id LIMIT $default_page , $data_per_page";
+                    $check_history = mysqli_query($dbconnection, $history_sql);
+                    if (mysqli_num_rows($check_history) > 0) {
+                        while ($history_data = mysqli_fetch_assoc($check_history)) {
+                            echo "
+                        <tr>
+                        <td>" . $history_data['task_name'] . "</td>
+                        <td>" . $history_data['task_desc'] . "</td>
+                        <td>" . $history_data['hist_date'] . "</td>
+                        <td>" . $history_data['user_name'] . "</td>
+                        <td>" . $history_data['hist_status'] . "</td>
+                        </tr>
+                        ";
+                        }
+                    }
+
+
+                    echo "</table>
+        </div>
+        <div class='pagination'>";
+                    $get_page_sql = "SELECT * FROM history_db";
+                    $check_page_sql = mysqli_query($dbconnection, $get_page_sql);
+                    $page_result = mysqli_num_rows($check_page_sql);
+                    $total_page = ceil($page_result / $data_per_page);
+
+                    for ($i = 1; $i < $total_page; $i++) {
+                        echo "
+                        <div class='page_num'>
+                        <a href='viewProfile.php?page=" . $i . "&userid=" . $user_id . "'>" . $i . "</a>
+                            </div>
+                            ";
+                    }
+                    echo "
+        </div>
+        ";
+                }
+
+                ?>
+            </div>
         </div>
     </div>
 

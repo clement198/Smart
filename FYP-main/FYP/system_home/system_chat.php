@@ -43,8 +43,12 @@ if (empty($id)) {
 
     <header class="top-bar">
         <div class="user_bar">
-            <a href="profile.php"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
+            <a href="#" onclick="profileDrop()"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
             <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
+        </div>
+        <div class="profile_dropdown">
+            <a href="profile.php">My Profile</a>
+            <a href="task_history.php">My Project / Task History</a>
         </div>
         <div class="location">
             <h3>Chat</h3>
@@ -60,7 +64,7 @@ if (empty($id)) {
         <ul class="menu-list">
             <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li><a href="system_home_page.php"><i class='bx bx-world'></i>Project Management</a></li>
-            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calendar</a></li>
             <li><a href="#" class="active"><i class='bx bxs-chat'></i>Chat</a></li>
         </ul>
     </div>
@@ -212,6 +216,7 @@ if (empty($id)) {
     ?>
     <script type="text/javascript" src="../home/index.js"></script>
     <script type="text/javascript" src="../home/chat.js"></script>
+    <script type="text/javascript" src="../home/profileDropdown.js"></script>
 </body>
 
 </html>

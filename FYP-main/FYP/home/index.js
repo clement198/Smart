@@ -77,6 +77,14 @@ const showRePass = () => {
 
 
 // Task
+
+
+let recover = document.querySelector(".recover_area");
+
+const myRevert = () => {
+    recover.classList.toggle('display_recover');
+}
+
 let task = document.querySelector('.task_creation');
 let status = document.querySelector(".status");
 let input = document.getElementById('input_status');
@@ -84,6 +92,7 @@ let input = document.getElementById('input_status');
 const myTask = () => {
     task.classList.toggle('showTaskForm');
 }
+
 
 let deleteTask = document.querySelector(".delete_alert");
 
@@ -124,6 +133,8 @@ if (statusBar.innerText === 'In Progress') {
 } else if (statusBar.innerText === 'Completed') {
     statusBar.style.background = "#00E200";
 }
+
+
 
 // Get upload File Task
 

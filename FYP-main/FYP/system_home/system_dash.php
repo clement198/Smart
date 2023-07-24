@@ -42,8 +42,12 @@ if (empty($id)) {
 
     <header class="top-bar">
         <div class="user_bar">
-            <a href="profile.php"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
+            <a href="#" onclick="profileDrop()"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
             <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
+        </div>
+        <div class="profile_dropdown">
+            <a href="profile.php">My Profile</a>
+            <a href="task_history.php">My Project / Task History</a>
         </div>
         <div class="location">
             <h3>Dashboard</h3>
@@ -58,14 +62,14 @@ if (empty($id)) {
         <ul class="menu-list">
             <li><a href="#" class="active"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li><a href="system_home_page.php"><i class='bx bx-world'></i>Project Management</a></li>
-            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calendar</a></li>
             <li><a href="system_chat.php"><i class='bx bxs-chat'></i>Chat</a></li>
         </ul>
     </div>
 
     <?php
 
-    $total_task_sql = "SELECT * FROM task_db";
+    $total_task_sql = "SELECT * FROM task_db WHERE recycle = 0";
     $check_task_sql = mysqli_query($dbconnection, $total_task_sql);
     $check_total_task = mysqli_num_rows($check_task_sql);
 
@@ -114,7 +118,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>New Task</p>
                             <?php
-                            $new_task_sql = "SELECT * FROM task_db WHERE status = 'New Task'";
+                            $new_task_sql = "SELECT * FROM task_db WHERE status = 'New Task' AND recycle = 0";
                             $check_new_task_sql = mysqli_query($dbconnection, $new_task_sql);
                             $total_new_task_task = mysqli_num_rows($check_new_task_sql);
                             ?>
@@ -145,7 +149,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>In Progress</p>
                             <?php
-                            $progress_sql = "SELECT * FROM task_db WHERE status = 'In Progress'";
+                            $progress_sql = "SELECT * FROM task_db WHERE status = 'In Progress' AND recycle = 0";
                             $check_progress_sql = mysqli_query($dbconnection, $progress_sql);
                             $total_progress_task = mysqli_num_rows($check_progress_sql);
                             ?>
@@ -180,7 +184,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>On Hold</p>
                             <?php
-                            $on_hold_sql = "SELECT * FROM task_db WHERE status = 'On Hold'";
+                            $on_hold_sql = "SELECT * FROM task_db WHERE status = 'On Hold' AND recycle = 0";
                             $check_onhold_sql = mysqli_query($dbconnection, $on_hold_sql);
                             $total_hold_task = mysqli_num_rows($check_onhold_sql);
                             ?>
@@ -212,7 +216,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>Cancelled</p>
                             <?php
-                            $cancelled_sql = "SELECT * FROM task_db WHERE status = 'Cancelled'";
+                            $cancelled_sql = "SELECT * FROM task_db WHERE status = 'Cancelled' AND recycle = 0";
                             $check_cancelled_sql = mysqli_query($dbconnection, $cancelled_sql);
                             $total_cancelled_task = mysqli_num_rows($check_cancelled_sql);
                             ?>
@@ -244,7 +248,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>In Review</p>
                             <?php
-                            $in_review_sql = "SELECT * FROM task_db WHERE status = 'In Review'";
+                            $in_review_sql = "SELECT * FROM task_db WHERE status = 'In Review' AND recycle = 0";
                             $check_in_review_sql = mysqli_query($dbconnection, $in_review_sql);
                             $total_in_review_task = mysqli_num_rows($check_in_review_sql);
                             ?>
@@ -276,7 +280,7 @@ if (empty($id)) {
                         <div class="info">
                             <p>Completed</p>
                             <?php
-                            $completed_sql = "SELECT * FROM task_db WHERE status = 'Completed'";
+                            $completed_sql = "SELECT * FROM task_db WHERE status = 'Completed' AND recycle = 0";
                             $check_completed_sql = mysqli_query($dbconnection, $completed_sql);
                             $total_completed_task = mysqli_num_rows($check_completed_sql);
                             ?>
@@ -404,6 +408,7 @@ if (empty($id)) {
     ?>
 
     <script type="text/javascript" src="../home/index.js"></script>
+    <script type="text/javascript" src="../home/profileDropdown.js"></script>
 </body>
 
 </html>

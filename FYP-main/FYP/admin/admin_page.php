@@ -145,6 +145,7 @@
                     <th>Message Receiver ID</th>
                     <th>Message</th>
                     <th>Message File Name</th>
+                    <th>Message Send Date</th>
                 </tr>
 
                 <?php
@@ -172,6 +173,7 @@
                         echo "<td>" . $result['receiver_id'] . "</td>";
                         echo "<td>" . $result['msg'] . "</td>";
                         echo "<td>" . $result['file'] . "</td>";
+                        echo "<td>" . $result['send_date'] . "</td>";
 
                         echo "</tr>";
                     }

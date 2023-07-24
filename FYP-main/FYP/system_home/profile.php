@@ -35,8 +35,12 @@ if (empty($id)) {
 <body>
     <header class="top-bar">
         <div class="user_bar">
-            <a href="profile.php"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
+            <a href="#" onclick="profileDrop()"><img src="../system_home/user_image/<?= $data['user_img'] ?>" alt=""></a>
             <li><a class="logout" href="../backend/logout.php">Logout<i class='bx bx-log-out'></i></a></li>
+        </div>
+        <div class="profile_dropdown">
+            <a href="profile.php">My Profile</a>
+            <a href="task_history.php">My Project / Task History</a>
         </div>
         <div class="location">
             <h3>Profile</h3>
@@ -50,43 +54,53 @@ if (empty($id)) {
         </div>
         <ul class="menu-list">
             <li><a href="system_dash.php"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="system_home_page.php" class="active"><i class='bx bx-world'></i>Project Management</a></li>
-            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calender</a></li>
+            <li><a href="system_home_page.php"><i class='bx bx-world'></i>Project Management</a></li>
+            <li><a href="calender.php"><i class='bx bxs-calendar'></i>Calendar</a></li>
             <li><a href="system_chat.php"><i class='bx bxs-chat'></i>Chat</a></li>
         </ul>
     </div>
 
-    <div class="profile">
-        <form action="../backend/profile_edit.php" method="POST" enctype="multipart/form-data">
-            <div class="user_img">
-                <img src="user_image/<?= $data['user_img'] ?>" id="profile_img">
-                <input type="file" accept="image/png , image/jpeg" name="image" onchange="imgChange()" id="upload">
+    <div class="profile_details">
+        <div class="profile">
+            <div class="user_detail_header">
+                <h3>Profile</h3>
             </div>
+            <form action="../backend/profile_edit.php" method="POST" enctype="multipart/form-data">
+                <div class="user_img">
+                    <img src="user_image/<?= $data['user_img'] ?>" id="profile_img">
+                    <input type="file" accept="image/png , image/jpeg" name="image" onchange="imgChange()" id="upload">
+                    <div class="upload">
+                        <label for="upload">Upload</label>
+                    </div>
 
-            <div class="upload">
-                <label for="upload">Upload</label>
-            </div>
+                </div>
 
-            <label for="name">Full Name :</label>
-            <input type="text" name="fullname" value="<?= $data['user_name'] ?>" required>
+                <div class="detail_input">
 
-            <label for="name">Password :</label>
-            <input type="password" name="password" value="<?= $data['user_pass'] ?>" required>
+                    <label for="name">Full Name :</label>
+                    <input type="text" name="fullname" value="<?= $data['user_name'] ?>" required>
 
-            <label for="email">Email :</label>
-            <p><?= $data['user_email'] ?></p>
+                    <label for="name">Password :</label>
+                    <input type="password" name="password" value="<?= $data['user_pass'] ?>" required>
 
-            <label for="com">Company Name :</label>
-            <p><?= $data['company_name'] ?></p>
+                    <label for="email">Email :</label>
+                    <p><?= $data['user_email'] ?></p>
 
-            <label for="role">Role / Position :</label>
-            <p><?= $data['role'] ?></p>
+                    <label for="com">Company Name :</label>
+                    <p><?= $data['company_name'] ?></p>
 
-            <input type="submit" value="Save">
-        </form>
+                    <label for="role">Role / Position :</label>
+                    <p><?= $data['role'] ?></p>
+
+                    <input type="submit" class="saveBtn" value="Save">
+
+                </div>
+            </form>
+        </div>
     </div>
 
     <script type="text/javascript" src="../home/index.js"></script>
+    <script type="text/javascript" src="../home/profileDropdown.js"></script>
 </body>
 
 </html>
